@@ -1,8 +1,7 @@
 #pragma once
 
 #include <vector>
-
-#include "Vector.h"
+#include "Vector2D.h"
 
 struct RenderItem
 {
@@ -35,6 +34,7 @@ public:
 private:
 	Vector2D renderBounds;
 	int curIdx = 0;
+
 	struct
 	{
 		unsigned char* canvas = nullptr;

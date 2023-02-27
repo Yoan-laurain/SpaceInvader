@@ -1,8 +1,7 @@
 #include <vector>
 #include <iostream>
-#include "Vector.h"
+#include "Vector2D.h"
 #include "ConsoleRenderer.h"
-
 #include <Windows.h>
 
 void setCursorPosition(int x, int y)
