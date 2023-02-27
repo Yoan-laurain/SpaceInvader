@@ -1,4 +1,8 @@
-﻿  Main.cpp
+﻿  Alien.cpp
+  AlienLaser.cpp
+  Main.cpp
   PlayerField.cpp
+  PlayerLaser.cpp
+  PlayerShip.cpp
   Génération de code en cours...
   DirtySpaceInvaders.vcxproj -> C:\Users\ghost\Desktop\Nouveau dossier\x64\Debug\DirtySpaceInvaders.exe

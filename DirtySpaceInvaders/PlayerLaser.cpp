@@ -11,7 +11,10 @@ PlayerLaser::PlayerLaser()
 
 PlayerLaser::~PlayerLaser()
 {
-	delete[] m_objType;
+	if (m_objType != nullptr)
+	{
+		delete[] m_objType;
+	}
 }
 
 void PlayerLaser::Update(PlayField& world)

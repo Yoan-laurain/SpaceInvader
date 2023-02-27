@@ -24,6 +24,11 @@ void PlayField::Update()
 		m_gameObjects.push_back(it);		
 	}
 
+	for (auto it : m_gameObjectToRemove)
+	{
+		m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), it), m_gameObjects.end());
+	}
+
 	m_gameObjectToAdd.clear();
 }
 
@@ -75,6 +80,5 @@ void PlayField::RemoveObject(GameObject* newObj)
 			return (in == newObj);
 		});
 
-	delete* it;
-	m_gameObjects.erase(it);
+	m_gameObjectToRemove.push_back(*it);
 }

@@ -25,3 +25,9 @@ Bug 6 :
 	PlayerField:: Update 
 		- On modifiait la collection en ajoutant des lasers en même temps 
 		que on itérait dessus maintenant il y a un tableau qui ajoute les lasers après les itérations
+
+Bug 7 :
+	PlayerField:: Update 
+		- On modifiait la collection en supprimant des lasers en même temps 
+		que on itérait dessus maintenant il y a un tableau qui supprime les lasers après les itérations
+

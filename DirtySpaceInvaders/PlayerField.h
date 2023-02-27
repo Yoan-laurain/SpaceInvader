@@ -32,4 +32,5 @@ class PlayField
 	private:
 		std::vector<GameObject*> m_gameObjects;
 		std::vector<GameObject*> m_gameObjectToAdd;
+		std::vector<GameObject*> m_gameObjectToRemove;
 };
