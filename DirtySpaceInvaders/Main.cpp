@@ -6,6 +6,8 @@
 #include "Alien.h"
 #include "PlayerShip.h"
 #include "GameRand.h"
+#include "Rock.h"
+#include "BetterAlien.h"
 
 int main()
 {
@@ -21,11 +23,23 @@ int main()
 	GameRand::intRand yCoord(0, 10);
 
 	//Populate aliens
-	for (int k = 0; k < 10; k++)
+	for (int k = 0; k < world.m_alienCount; k++)
 	{
 		Alien& a = *(new Alien);
 		a.pos.x = (float)xCoord(gameRandInstance->rGen);
 		a.pos.y = (float)yCoord(gameRandInstance->rGen);
+		world.AddObject(&a);
+	}
+
+	GameRand::intRand xCoorRock(0, (int)size.x - 1);
+	GameRand::intRand yCoordRock(10, 15);
+	
+	// populate rocks
+	for (int k = 0; k < world.m_rockCount; k++)
+	{
+		Rock& a = *(new Rock);
+		a.pos.x = (float)xCoorRock(gameRandInstance->rGen);
+		a.pos.y = (float)yCoordRock(gameRandInstance->rGen);
 		world.AddObject(&a);
 	}
 
@@ -34,10 +48,10 @@ int main()
 	p->pos = Vector2D(40, 27);
 	world.AddObject(p);
 
-	for (int i = 0; i < 100; i++)
+	while(true)    
 	{
 		world.Update();
-
+		 
 		RenderItemList rl;
 		for (auto it : world.GameObjects())
 		{

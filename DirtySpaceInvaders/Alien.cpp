@@ -1,7 +1,6 @@
 #include "Alien.h"
 #include "AlienLaser.h"
 #include "PlayerField.h"
-#include "ConsoleRenderer.h"
 #include "GameRand.h"
 
 Alien::Alien()

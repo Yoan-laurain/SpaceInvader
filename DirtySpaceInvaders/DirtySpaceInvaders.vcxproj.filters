@@ -75,6 +75,12 @@
     <ClInclude Include="Alien.h">
       <Filter>Header Files\GameObjects\Alien</Filter>
     </ClInclude>
+    <ClInclude Include="Rock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BetterAlien.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleRenderer.cpp">
@@ -112,6 +118,12 @@
     </ClCompile>
     <ClCompile Include="AlienLaser.cpp">
       <Filter>Source Files\GameObjects\Alien</Filter>
+    </ClCompile>
+    <ClCompile Include="Rock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BetterAlien.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

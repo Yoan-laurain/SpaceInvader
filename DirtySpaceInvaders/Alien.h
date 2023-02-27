@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObject.h"
+#include "ConsoleRenderer.h"
 
 class Alien : public GameObject
 {
@@ -9,7 +10,7 @@ class Alien : public GameObject
 
 		virtual bool DecreaseHealth() override;
 
-	private:
+	protected:
 		float m_health = 1.f;
 		float m_energy = 0.f;
 		float m_direction = 1.f;

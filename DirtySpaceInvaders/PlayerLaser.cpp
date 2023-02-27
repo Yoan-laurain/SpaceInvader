@@ -58,6 +58,14 @@ void PlayerLaser::Update(PlayField& world)
 				break;
 			}
 		}
+		else if (!strcmp(it->m_objType, "Rock"))
+		{
+			if (it->pos.IntCmp(pos))
+			{
+				deleted = true;
+				break;
+			}
+		}
 	}
 
 	if (deleted)

@@ -14,6 +14,9 @@ class PlayField
 		int m_AlienLasers = 10;
 		int m_PlayerLasers = 40;
 
+		int m_alienCount = 5;
+		int m_rockCount = 5;
+
 		PlayField(Vector2D iBounds);
 		const std::vector<GameObject*>& GameObjects();
 
@@ -28,6 +31,8 @@ class PlayField
 		void AddObject(GameObject* newObj);
 
 		void RemoveObject(GameObject* newObj);
+		
+		void UpgradeAliens();
 
 	private:
 		std::vector<GameObject*> m_gameObjects;

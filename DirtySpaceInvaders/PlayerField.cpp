@@ -1,5 +1,7 @@
 #include "PlayerField.h"
 #include "PlayerInput.h"
+#include "BetterAlien.h"
+#include "Alien.h"
 
 PlayField::PlayField(Vector2D iBounds) : m_bounds(iBounds)
 {
@@ -32,6 +34,9 @@ void PlayField::Update()
 
 	m_gameObjectToAdd.clear();
 	m_gameObjectToRemove.clear();	  
+
+	if (m_alienCount == 3)
+		UpgradeAliens();
 }
 
 GameObject* PlayField::GetPlayerObject()
@@ -82,5 +87,31 @@ void PlayField::RemoveObject(GameObject* newObj)
 			return (in == newObj);
 		});
 
+	if (it != m_gameObjects.end())
+	{
+		if (strcmp(newObj->m_objType, "Alien") == 0)
+			m_alienCount--;
+
+		else if (strcmp(newObj->m_objType, "Rock") == 0)
+			m_rockCount--;
+	}
+
 	m_gameObjectToRemove.push_back(*it);
+}
+
+void PlayField::UpgradeAliens()
+{
+	for (auto it : m_gameObjects)
+	{
+		if (strcmp(it->m_objType, "Alien") == 0)
+		{
+			Alien* alien = static_cast<Alien*>(it);
+			
+			BetterAlien* newAlien = new BetterAlien();
+			newAlien->pos = alien->pos;
+			
+			RemoveObject(it);
+			AddObject(newAlien);
+		}
+	}
 }

@@ -25,6 +25,18 @@ void AlienLaser::Update(PlayField& world)
 		deleted = true;
 	}
 
+	for (auto it : world.GameObjects())
+	{		
+		if (!strcmp(it->m_objType, "Rock"))
+		{
+			if (it->pos.IntCmp(pos))
+			{
+				deleted = true;
+				break;
+			}
+		}
+	}
+
 	GameObject* player = world.GetPlayerObject();
 	if (pos.IntCmp(player->pos))
 	{
@@ -32,7 +44,7 @@ void AlienLaser::Update(PlayField& world)
 
 		PlayerShip* p = (PlayerShip*)player;
 		bool isDead = p->DecreaseHealth();
-		
+
 		if (isDead)
 		{
 			world.RemoveObject(player);

@@ -12,5 +12,5 @@ class PlayerShip : public GameObject
 		virtual bool DecreaseHealth() override;
 
 	private :
-		int m_health = 1;
+		int m_health = 50;
 };

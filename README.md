@@ -37,4 +37,11 @@ NB:
 	- Mise en place de decreased health dans player ship hérité de GameObject 
 	- Same pour Alien 
 	- Delete du player laser que quand on le remove du tableau
+        - Création classe better alien herite de alien
+	- Si 2 survivants alors remplace tout les aliens par better aliens
+	- Ajout de la classe rocher + génération des rochers dans le main + collision des rochers avec les laser dans le update des lasers
+	- Remplacement for loop main par while true 
+	- Input windows.h dans uneclasse playerInput 
+	- 
+
 
