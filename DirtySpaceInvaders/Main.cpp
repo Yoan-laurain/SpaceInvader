@@ -21,7 +21,7 @@ int main()
 	GameRand::intRand yCoord(0, 10);
 
 	//Populate aliens
-	for (int k = 0; k < 20; k++)
+	for (int k = 0; k < 10; k++)
 	{
 		Alien& a = *(new Alien);
 		a.pos.x = (float)xCoord(gameRandInstance->rGen);

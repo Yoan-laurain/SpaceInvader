@@ -12,5 +12,5 @@ class GameObject
 		unsigned char sprite;
 
 		virtual void Update(PlayField& world);
-		bool DecreaseHealth();
+		virtual bool DecreaseHealth();
 };

@@ -1,6 +1,7 @@
 #include "AlienLaser.h"
 #include "ConsoleRenderer.h"
 #include "PlayerField.h"
+#include "PlayerShip.h"
 
 AlienLaser::AlienLaser()
 {
@@ -28,7 +29,15 @@ void AlienLaser::Update(PlayField& world)
 	if (pos.IntCmp(player->pos))
 	{
 		deleted = true;
-		world.RemoveObject(player);
+
+		PlayerShip* p = (PlayerShip*)player;
+		bool isDead = p->DecreaseHealth();
+		
+		if (isDead)
+		{
+			world.RemoveObject(player);
+			exit(0);
+		}
 	}
 
 	if (deleted)

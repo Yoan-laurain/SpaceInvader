@@ -31,3 +31,10 @@ Bug 7 :
 		- On modifiait la collection en supprimant des lasers en même temps 
 		que on itérait dessus maintenant il y a un tableau qui supprime les lasers après les itérations
 
+NB: 
+	Mise en place du override sur les méthodes de RndInput 
+        - On arrete le jeu quand le joueur meurt -> Alien cpp -> Update et Alien Laser cpp ->Update 
+	- Mise en place de decreased health dans player ship hérité de GameObject 
+	- Same pour Alien 
+	- Delete du player laser que quand on le remove du tableau
+

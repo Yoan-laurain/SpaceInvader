@@ -12,7 +12,7 @@ class PlayField
 
 		// Number of available active laser slots for aliens and player
 		int m_AlienLasers = 10;
-		int m_PlayerLasers = 4;
+		int m_PlayerLasers = 40;
 
 		PlayField(Vector2D iBounds);
 		const std::vector<GameObject*>& GameObjects();

@@ -37,9 +37,17 @@ void Alien::Update(PlayField& world)
 	{
 		// kill player
 		GameObject* player = world.GetPlayerObject();
+		
+		if (player == nullptr)
+		{
+			throw std::invalid_argument("Player object is null");
+			return;
+		}
+		
 		if (pos.IntCmp(player->pos))
 		{
 			world.RemoveObject(player);
+			exit(0);
 		}
 	}
 

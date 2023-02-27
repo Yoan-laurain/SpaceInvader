@@ -30,3 +30,9 @@ void PlayerShip::Update(PlayField& world)
 		world.SpawnLaser(&newLaser);
 	}
 }
+
+bool PlayerShip::DecreaseHealth()
+{
+	m_health -= 1.f;
+	return m_health <= 0;
+}

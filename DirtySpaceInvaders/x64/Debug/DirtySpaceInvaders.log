@@ -4,5 +4,6 @@
   PlayerField.cpp
   PlayerLaser.cpp
   PlayerShip.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\PlayerShip.cpp(36,14): warning C4244: '-=' : conversion de 'float' en 'int', perte possible de données
   Génération de code en cours...
-  DirtySpaceInvaders.vcxproj -> C:\Users\ghost\Desktop\Nouveau dossier\x64\Debug\DirtySpaceInvaders.exe
+  DirtySpaceInvaders.vcxproj -> D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\x64\Debug\DirtySpaceInvaders.exe

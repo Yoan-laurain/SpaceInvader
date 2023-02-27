@@ -1,9 +1,9 @@
 #include "PlayerField.h"
-#include "RndInput.h"
+#include "PlayerInput.h"
 
 PlayField::PlayField(Vector2D iBounds) : m_bounds(iBounds)
 {
-	m_controllerInput = new RndInput;
+	m_controllerInput = new PlayerInput;
 }
 
 const std::vector<GameObject*>& PlayField::GameObjects()
@@ -26,10 +26,12 @@ void PlayField::Update()
 
 	for (auto it : m_gameObjectToRemove)
 	{
-		m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), it), m_gameObjects.end());
+		delete it;
+		m_gameObjects.erase(std::find(m_gameObjects.begin(), m_gameObjects.end(), it));
 	}
 
 	m_gameObjectToAdd.clear();
+	m_gameObjectToRemove.clear();	  
 }
 
 GameObject* PlayField::GetPlayerObject()
