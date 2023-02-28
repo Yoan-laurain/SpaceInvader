@@ -29,7 +29,7 @@ void AlienLaser::Update(PlayField& world)
 	{		
 		if (!strcmp(it->m_objType, "Rock"))
 		{
-			if (it->pos.IntCmp(pos))
+			if ( it->IntCmp(pos) )
 			{
 				deleted = true;
 				break;
@@ -38,7 +38,7 @@ void AlienLaser::Update(PlayField& world)
 	}
 
 	GameObject* player = world.GetPlayerObject();
-	if (pos.IntCmp(player->pos))
+	if ( IntCmp(player->pos) )
 	{
 		deleted = true;
 

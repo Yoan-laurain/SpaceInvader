@@ -43,7 +43,7 @@ void Alien::Update(PlayField& world)
 			return;
 		}
 		
-		if (pos.IntCmp(player->pos))
+		if ( IntCmp(player->pos) )
 		{
 			world.RemoveObject(player);
 			exit(0);

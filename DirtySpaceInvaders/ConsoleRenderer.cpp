@@ -1,6 +1,5 @@
 #include <vector>
 #include <iostream>
-#include "Vector2D.h"
 #include "ConsoleRenderer.h"
 #include <Windows.h>
 
@@ -8,11 +7,17 @@ void setCursorPosition(int x, int y)
 {
 	static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	std::cout.flush();
-	COORD coord = { (SHORT)x, (SHORT)y };
+	
+	COORD coord = 
+		{
+			(SHORT)x,
+			(SHORT)y
+		};
+	
 	SetConsoleCursorPosition(hOut, coord);
 }
 
-Renderer::Renderer(const Vector2D& bounds)
+Renderer::Renderer(const sf::Vector2f& bounds)
 	: renderBounds(bounds)
 {
 	canvasSize = (int)(bounds.x * bounds.y);
@@ -45,6 +50,11 @@ void Renderer::Update(const RenderItemList& RenderList)
 	DrawCanvas();
 }
 
+unsigned char* Renderer::CurCanvas(int x, int y)
+{
+	return &disp[curIdx % 2].canvas[x + (int)renderBounds.x * y];
+}
+
 void Renderer::FillCanvas(unsigned char sprite)
 {
 	for (int i = 0; i < canvasSize; i++)
@@ -67,4 +77,3 @@ void Renderer::DrawCanvas()
 
 	curIdx++;
 }
-

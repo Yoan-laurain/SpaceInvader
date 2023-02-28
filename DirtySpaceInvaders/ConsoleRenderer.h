@@ -1,12 +1,13 @@
 #pragma once
 
 #include <vector>
-#include "Vector2D.h"
+#include <SFML/System/Vector2.hpp>
+
 
 struct RenderItem
 {
-	RenderItem(const Vector2D& iPos, char iSprite) : pos(iPos), sprite(iSprite) {};
-	Vector2D pos;
+	RenderItem(const sf::Vector2f& iPos, char iSprite) : pos(iPos), sprite(iSprite) {};
+	sf::Vector2f pos;
 	char sprite;
 };
 typedef std::vector<RenderItem> RenderItemList;
@@ -26,14 +27,14 @@ enum RaiderSprites
 class Renderer
 {
 public:
-	Renderer(const Vector2D& bounds);
+	Renderer(const sf::Vector2f& bounds);
 	~Renderer();
 
 	// Draws all game objects after clearing filling the Canvas with _ symbol
 	void Update(const RenderItemList& renderList);
 
 private:
-	Vector2D renderBounds;
+	sf::Vector2f renderBounds;
 	int curIdx = 0;
 
 	struct
@@ -42,7 +43,7 @@ private:
 	} disp[2]; // double buffer our canvas for no flicker display
 
 	int canvasSize = 0;
-	unsigned char* CurCanvas(int x, int y) { return &disp[curIdx % 2].canvas[x + (int)renderBounds.x * y]; }
+	unsigned char* CurCanvas(int x, int y);
 
 	// Fills whole canvas array with sprite
 	void FillCanvas(unsigned char sprite);
@@ -50,4 +51,3 @@ private:
 	// Prints canvas char array on console
 	void DrawCanvas();
 };
-

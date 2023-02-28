@@ -34,7 +34,7 @@ void PlayerLaser::Update(PlayField& world)
 	{
 		if ( !strcmp(it->m_objType, "Alien") )
 		{
-			if (it->pos.IntCmp(pos))
+			if ( it->IntCmp(pos) )
 			{				
 				Alien* alien = (Alien*)it;
 				bool isDead = alien->DecreaseHealth();
@@ -50,7 +50,7 @@ void PlayerLaser::Update(PlayField& world)
 		}
 		else if (!strcmp(it->m_objType, "AlienLaser"))
 		{
-			if (it->pos.IntCmp(pos))
+			if ( it->IntCmp(pos) )
 			{
 				world.DespawnLaser(it);
 
@@ -60,7 +60,7 @@ void PlayerLaser::Update(PlayField& world)
 		}
 		else if (!strcmp(it->m_objType, "Rock"))
 		{
-			if (it->pos.IntCmp(pos))
+			if ( it->IntCmp(pos) )
 			{
 				deleted = true;
 				break;

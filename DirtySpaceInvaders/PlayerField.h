@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include "Vector2D.h"
 #include "GameObject.h"
 #include "Input.h"
 
@@ -8,7 +7,7 @@ class PlayField
 {
 	public:
 		Input* m_controllerInput;
-		Vector2D m_bounds;
+		sf::Vector2f m_bounds;
 
 		// Number of available active laser slots for aliens and player
 		int m_AlienLasers = 10;
@@ -17,7 +16,7 @@ class PlayField
 		int m_alienCount = 5;
 		int m_rockCount = 5;
 
-		PlayField(Vector2D iBounds);
+		PlayField(sf::Vector2f iBounds);
 		const std::vector<GameObject*>& GameObjects();
 
 		void Update();

@@ -3,7 +3,7 @@
 #include "BetterAlien.h"
 #include "Alien.h"
 
-PlayField::PlayField(Vector2D iBounds) : m_bounds(iBounds)
+PlayField::PlayField(sf::Vector2f iBounds) : m_bounds(iBounds)
 {
 	m_controllerInput = new PlayerInput;
 }

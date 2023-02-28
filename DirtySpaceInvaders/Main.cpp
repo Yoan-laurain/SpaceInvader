@@ -15,7 +15,7 @@ int main()
 	
 	gameRandInstance->rGen.seed(1);
 
-	Vector2D size(80, 28);
+	sf::Vector2f size(80, 28);
 	Renderer consoleRenderer(size);
 	PlayField world(size);
 
@@ -45,7 +45,7 @@ int main()
 
 	// Add player
 	PlayerShip* p = new PlayerShip;
-	p->pos = Vector2D(40, 27);
+	p->pos = sf::Vector2f(40, 27);
 	world.AddObject(p);
 
 	while(true)    
@@ -55,7 +55,7 @@ int main()
 		RenderItemList rl;
 		for (auto it : world.GameObjects())
 		{
-			RenderItem a = RenderItem(Vector2D(it->pos), it->sprite);
+			RenderItem a = RenderItem(sf::Vector2f(it->pos), it->sprite);
 			rl.push_back(a);
 		}
 
