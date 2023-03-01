@@ -42,6 +42,9 @@ NB:
 	- Ajout de la classe rocher + génération des rochers dans le main + collision des rochers avec les laser dans le update des lasers
 	- Remplacement for loop main par while true 
 	- Input windows.h dans uneclasse playerInput 
-	- 
-
+	- Remplacement des vector 2D par sf::vector2f + suppression de la classe vector2d
+	- Clean du main ( pop ) est mise en place dans playField
+	- Mise en place du clean code dans plusieurs fichiers ( 1 méthode 1 "action" ) 
+	- Check des pointeurs aux destructeurs
+	- variables de classes m_
 

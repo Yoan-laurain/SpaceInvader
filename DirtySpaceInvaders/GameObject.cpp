@@ -1,10 +1,8 @@
 #include "GameObject.h"
-#include "PlayerShip.h"
-#include "Alien.h"
 
 bool GameObject::IntCmp(const sf::Vector2f& vec)
 {
-	return int(pos.x) == int(vec.x) && int(pos.y) == int(vec.y);
+	return int(m_pos.x) == int(vec.x) && int(m_pos.y) == int(vec.y);
 }
 
 void GameObject::Update(PlayField& world){}

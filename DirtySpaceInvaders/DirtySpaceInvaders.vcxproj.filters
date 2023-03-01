@@ -34,15 +34,36 @@
     <Filter Include="Header Files\GameObjects\Player">
       <UniqueIdentifier>{f7204619-fa53-4f2c-b4eb-b2d574648b4e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\GameObjects\Alien">
+    <Filter Include="Header Files\GameObjects\Aliens">
       <UniqueIdentifier>{94bbde5a-f4b6-472e-ba09-b1e48692a7ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Aliens\BetterAlien">
+      <UniqueIdentifier>{a559f85f-cee3-44f8-9e95-096d8c354b16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Aliens\SimpleAlien">
+      <UniqueIdentifier>{0a6ab31c-5f6c-4f7e-9e15-06c8864a956e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Props">
+      <UniqueIdentifier>{7f0a4bce-5d2e-45e6-a9c0-74924638194c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Props">
+      <UniqueIdentifier>{b32b01f7-89f2-4670-ab60-07f3bf193ae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Alien\BetterAlien">
+      <UniqueIdentifier>{61423700-e75e-4d8b-b482-5277698b6eff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Alien\SimpleAlien">
+      <UniqueIdentifier>{7d3c7d85-a1ae-4949-b8e0-afe77cce7ef6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderer">
+      <UniqueIdentifier>{80f0375b-334e-4082-bf26-71090889d722}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer">
+      <UniqueIdentifier>{0d33eb4f-37c1-401f-80e6-271dd7e075c0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConsoleRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerField.h">
+    <ClInclude Include="PlayField.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameRand.h">
@@ -66,27 +87,27 @@
     <ClInclude Include="PlayerShip.h">
       <Filter>Header Files\GameObjects\Player</Filter>
     </ClInclude>
-    <ClInclude Include="AlienLaser.h">
-      <Filter>Header Files\GameObjects\Alien</Filter>
-    </ClInclude>
     <ClInclude Include="Alien.h">
-      <Filter>Header Files\GameObjects\Alien</Filter>
+      <Filter>Header Files\GameObjects\Aliens\SimpleAlien</Filter>
     </ClInclude>
-    <ClInclude Include="Rock.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="AlienLaser.h">
+      <Filter>Header Files\GameObjects\Aliens\SimpleAlien</Filter>
     </ClInclude>
     <ClInclude Include="BetterAlien.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameObjects\Aliens\BetterAlien</Filter>
+    </ClInclude>
+    <ClInclude Include="Rock.h">
+      <Filter>Header Files\GameObjects\Props</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleRenderer.h">
+      <Filter>Header Files\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleRenderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerField.cpp">
+    <ClCompile Include="PlayField.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameRand.cpp">
@@ -107,17 +128,20 @@
     <ClCompile Include="PlayerShip.cpp">
       <Filter>Source Files\GameObjects\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Alien.cpp">
-      <Filter>Source Files\GameObjects\Alien</Filter>
-    </ClCompile>
-    <ClCompile Include="AlienLaser.cpp">
-      <Filter>Source Files\GameObjects\Alien</Filter>
-    </ClCompile>
     <ClCompile Include="Rock.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GameObjects\Props</Filter>
     </ClCompile>
     <ClCompile Include="BetterAlien.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GameObjects\Alien\BetterAlien</Filter>
+    </ClCompile>
+    <ClCompile Include="Alien.cpp">
+      <Filter>Source Files\GameObjects\Alien\SimpleAlien</Filter>
+    </ClCompile>
+    <ClCompile Include="AlienLaser.cpp">
+      <Filter>Source Files\GameObjects\Alien\SimpleAlien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleRenderer.cpp">
+      <Filter>Source Files\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

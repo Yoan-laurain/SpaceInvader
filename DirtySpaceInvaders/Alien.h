@@ -1,6 +1,6 @@
 #pragma once
+
 #include "GameObject.h"
-#include "ConsoleRenderer.h"
 
 class Alien : public GameObject
 {
@@ -9,6 +9,9 @@ class Alien : public GameObject
 		~Alien();
 
 		virtual bool DecreaseHealth() override;
+
+		void CheckBorderVertical(PlayField& world);
+		void CheckBorderHorizontal(PlayField& world);
 
 	protected:
 		float m_health = 1.f;

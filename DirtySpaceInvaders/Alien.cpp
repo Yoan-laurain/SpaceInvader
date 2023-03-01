@@ -1,13 +1,14 @@
 #include "Alien.h"
 #include "AlienLaser.h"
-#include "PlayerField.h"
+#include "PlayField.h"
 #include "GameRand.h"
+#include <ConsoleRenderer.h>
 
 Alien::Alien()
 {
 	m_objType = new char[64];
 	strcpy(m_objType, "Alien");
-	sprite = RS_Alien;
+	m_sprite = RS_Alien;
 }
 
 Alien::~Alien()
@@ -21,41 +22,49 @@ bool Alien::DecreaseHealth()
 	return m_health <= 0;
 }
 
-void Alien::Update(PlayField& world)
+void Alien::CheckBorderVertical(PlayField& world)
 {
-	pos.x += m_direction * m_velocity;
-	// Border check
-	if (pos.x < 0 || pos.x >= world.m_bounds.x - 1)
+	if ( m_pos.y >= world.m_bounds.y - 1)
 	{
-		m_direction = -m_direction;
-		pos.y += 1;
-	}
+		// kill player 
+		GameObject* player = world.GetPlayerObject(); 
 
-	// Border check vertical:
-	if (pos.y >= world.m_bounds.y - 1)
-	{
-		// kill player
-		GameObject* player = world.GetPlayerObject();
-		
 		if (player == nullptr)
 		{
 			throw std::invalid_argument("Player object is null");
 			return;
 		}
-		
-		if ( IntCmp(player->pos) )
+
+		if (IntCmp(player->m_pos))
 		{
 			world.RemoveObject(player);
 			exit(0);
 		}
 	}
+}
+
+void Alien::CheckBorderHorizontal(PlayField& world)
+{
+	if (m_pos.x < 0 || m_pos.x >= world.m_bounds.x - 1)
+	{
+		m_direction = -m_direction;
+		m_pos.y += 1;
+	}
+}
+
+void Alien::Update(PlayField& world)
+{
+	m_pos.x += m_direction * m_velocity;
+	
+	CheckBorderHorizontal(world);
+	CheckBorderVertical(world);
 
 	GameRand::floatRand fireRate(0, 1);
 	if (fireRate(GameRand::GetInstance()->rGen) < 0.5 && world.m_AlienLasers > 0)
 	{
 		//Spawn laser
 		GameObject& newLaser = *(new AlienLaser);
-		newLaser.pos = pos;
+		newLaser.m_pos = m_pos;
 		world.SpawnLaser(&newLaser);
 	}
 }

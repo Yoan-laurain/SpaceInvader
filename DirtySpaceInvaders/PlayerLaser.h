@@ -1,4 +1,5 @@
 #pragma once
+
 #include "GameObject.h"
 
 class PlayerLaser : public GameObject
@@ -8,4 +9,6 @@ class PlayerLaser : public GameObject
 		~PlayerLaser();
 
 		void Update(PlayField& world) override;
+
+		void CollisionWithAlien(PlayField& world, GameObject* alien);
 };

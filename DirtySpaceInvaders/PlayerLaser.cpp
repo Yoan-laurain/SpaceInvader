@@ -1,75 +1,64 @@
 #include "PlayerLaser.h"
 #include "ConsoleRenderer.h"
-#include "PlayerField.h"
+#include "PlayField.h"
 #include "Alien.h"
 
 PlayerLaser::PlayerLaser()
 {
 	m_objType = new char[64]; 
 	strcpy(m_objType, "PlayerLaser"); 
-	sprite = RS_PlayerLaser;
+	m_sprite = RS_PlayerLaser;
 }
 
 PlayerLaser::~PlayerLaser()
 {
 	if (m_objType != nullptr)
-	{
 		delete[] m_objType;
-	}
 }
 
+// TODO : OPTI
 void PlayerLaser::Update(PlayField& world)
 {
 	// if out of the map
 	bool deleted = false;
-	pos.y -= 1.f;
+	m_pos.y -= 1.f;
 
-	if (pos.y < 0)
-	{
+	if (m_pos.y < 0)
 		deleted = true;
-	}
-	
+
 	// if hit alien
 	for (auto it : world.GameObjects())
 	{
-		if ( !strcmp(it->m_objType, "Alien") )
+		if (deleted)
+			break;
+		else if ( !strcmp(it->m_objType, "Alien") )
 		{
-			if ( it->IntCmp(pos) )
+			if ( it->IntCmp(m_pos) )
 			{				
-				Alien* alien = (Alien*)it;
-				bool isDead = alien->DecreaseHealth();
-
-				if (isDead)
-				{
-					world.RemoveObject(it);
-				}
-				
+				CollisionWithAlien(world, it);			
 				deleted = true;
-				break;
 			}
 		}
 		else if (!strcmp(it->m_objType, "AlienLaser"))
-		{
-			if ( it->IntCmp(pos) )
+			if ( it->IntCmp(m_pos) )
 			{
 				world.DespawnLaser(it);
-
 				deleted = true;
-				break;
 			}
-		}
 		else if (!strcmp(it->m_objType, "Rock"))
-		{
-			if ( it->IntCmp(pos) )
-			{
+			if ( it->IntCmp(m_pos) )
 				deleted = true;
-				break;
-			}
-		}
 	}
 
 	if (deleted)
-	{
 		world.DespawnLaser(this);
-	}
+}
+
+void PlayerLaser::CollisionWithAlien(PlayField& world, GameObject* alien)
+{
+	Alien* alienHit = (Alien*)alien;
+	bool isDead = alienHit->DecreaseHealth();
+
+	if (isDead)
+		world.RemoveObject(alienHit);
 }

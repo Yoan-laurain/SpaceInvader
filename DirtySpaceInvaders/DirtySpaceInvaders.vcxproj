@@ -149,7 +149,7 @@
     <ClInclude Include="GameRand.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
-    <ClInclude Include="PlayerField.h" />
+    <ClInclude Include="PlayField.h" />
     <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="PlayerLaser.h" />
     <ClInclude Include="PlayerShip.h" />
@@ -164,7 +164,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameRand.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="PlayerField.cpp" />
+    <ClCompile Include="PlayField.cpp" />
     <ClCompile Include="PlayerInput.cpp" />
     <ClCompile Include="PlayerLaser.cpp" />
     <ClCompile Include="PlayerShip.cpp" />
