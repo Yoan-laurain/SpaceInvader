@@ -90,9 +90,6 @@
     <ClInclude Include="Alien.h">
       <Filter>Header Files\GameObjects\Aliens\SimpleAlien</Filter>
     </ClInclude>
-    <ClInclude Include="AlienLaser.h">
-      <Filter>Header Files\GameObjects\Aliens\SimpleAlien</Filter>
-    </ClInclude>
     <ClInclude Include="BetterAlien.h">
       <Filter>Header Files\GameObjects\Aliens\BetterAlien</Filter>
     </ClInclude>
@@ -101,6 +98,9 @@
     </ClInclude>
     <ClInclude Include="ConsoleRenderer.h">
       <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="AlienLaser.h">
+      <Filter>Header Files\GameObjects\Aliens</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -137,11 +137,11 @@
     <ClCompile Include="Alien.cpp">
       <Filter>Source Files\GameObjects\Alien\SimpleAlien</Filter>
     </ClCompile>
-    <ClCompile Include="AlienLaser.cpp">
-      <Filter>Source Files\GameObjects\Alien\SimpleAlien</Filter>
-    </ClCompile>
     <ClCompile Include="ConsoleRenderer.cpp">
       <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="AlienLaser.cpp">
+      <Filter>Source Files\GameObjects\Alien</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
