@@ -8,7 +8,7 @@ class Alien : public GameObject
 		Alien();
 		~Alien();
 
-		virtual bool DecreaseHealth() override;
+		virtual bool DecreaseHealth(float damage) override;
 
 		void CheckBorderVertical(PlayField& world);
 		void CheckBorderHorizontal(PlayField& world);

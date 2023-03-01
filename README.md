@@ -48,3 +48,15 @@ NB:
 	- Check des pointeurs aux destructeurs
 	- variables de classes m_
 
+	- Partie configurable : 
+		- Nb aliens
+		- Nb rocks
+		- Nb aliens lasers
+		- Nb players lasers
+		- Nb of remaining aliens before tuning them into better aliens
+		- Alien laser speed and damage
+		- Player health 
+		- Player speed
+		- Player laser damage and speed
+		- Better alien stats
+

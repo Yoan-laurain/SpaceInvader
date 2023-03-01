@@ -18,7 +18,7 @@ AlienLaser::~AlienLaser()
 void AlienLaser::Update(PlayField& world)
 {
 	bool deleted = false;
-	m_pos.y += 1.f;
+	m_pos.y += m_laserSpeed;
 
 	if (m_pos.y > world.m_bounds.y)
 		deleted = true;
@@ -50,7 +50,7 @@ bool AlienLaser::CheckCollisionWithPlayer(PlayField& world)
 	{
 		PlayerShip* p = (PlayerShip*)player;
 		
-		bool isDead = p->DecreaseHealth();
+		bool isDead = p->DecreaseHealth(m_laserDamage);
 
 		if (isDead)
 		{

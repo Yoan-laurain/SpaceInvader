@@ -19,9 +19,9 @@ PlayerShip::~PlayerShip()
 void PlayerShip::Update(PlayField& world)
 {
 	if (world.m_controllerInput->Left())
-		m_pos.x -= 1;
+		m_pos.x -= m_speed;
 	else if (world.m_controllerInput->Right())
-		m_pos.x += 1;
+		m_pos.x += m_speed;
 
 	if (world.m_controllerInput->Fire() && world.m_PlayerLasers > 0)
 	{
@@ -32,8 +32,8 @@ void PlayerShip::Update(PlayField& world)
 	}
 }
 
-bool PlayerShip::DecreaseHealth()
+bool PlayerShip::DecreaseHealth(float damage)
 {
-	m_health -= 1.f;
+	m_health -= damage;
 	return m_health <= 0;
 }

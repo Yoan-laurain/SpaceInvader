@@ -21,7 +21,7 @@ void PlayerLaser::Update(PlayField& world)
 {
 	// if out of the map
 	bool deleted = false;
-	m_pos.y -= 1.f;
+	m_pos.y -= m_laserSpeed;
 
 	if (m_pos.y < 0)
 		deleted = true;
@@ -57,7 +57,7 @@ void PlayerLaser::Update(PlayField& world)
 void PlayerLaser::CollisionWithAlien(PlayField& world, GameObject* alien)
 {
 	Alien* alienHit = (Alien*)alien;
-	bool isDead = alienHit->DecreaseHealth();
+	bool isDead = alienHit->DecreaseHealth(m_laserDamage);
 
 	if (isDead)
 		world.RemoveObject(alienHit);

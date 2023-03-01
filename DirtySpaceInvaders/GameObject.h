@@ -15,5 +15,5 @@ class GameObject
 
 		virtual void Update(PlayField& world);
 		
-		virtual bool DecreaseHealth();
+		virtual bool DecreaseHealth(float damage);
 };

@@ -16,9 +16,9 @@ Alien::~Alien()
 	delete[] m_objType;
 }
 
-bool Alien::DecreaseHealth()
+bool Alien::DecreaseHealth(float damage)
 {
-	m_health -= 1.f; 
+	m_health -= damage; 
 	return m_health <= 0;
 }
 
@@ -48,7 +48,7 @@ void Alien::CheckBorderHorizontal(PlayField& world)
 	if (m_pos.x < 0 || m_pos.x >= world.m_bounds.x - 1)
 	{
 		m_direction = -m_direction;
-		m_pos.y += 1;
+		m_pos.y += m_velocity;
 	}
 }
 

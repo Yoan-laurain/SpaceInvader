@@ -11,4 +11,8 @@ class PlayerLaser : public GameObject
 		void Update(PlayField& world) override;
 
 		void CollisionWithAlien(PlayField& world, GameObject* alien);
+
+	private:
+		int m_laserSpeed = 1.f;
+		int m_laserDamage = 1.f;
 };

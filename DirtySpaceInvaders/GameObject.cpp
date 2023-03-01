@@ -7,7 +7,7 @@ bool GameObject::IntCmp(const sf::Vector2f& vec)
 
 void GameObject::Update(PlayField& world){}
 
-bool GameObject::DecreaseHealth()
+bool GameObject::DecreaseHealth(float damage)
 {
 	return false;
 }

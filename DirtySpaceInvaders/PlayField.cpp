@@ -20,16 +20,11 @@ const std::vector<GameObject*>& PlayField::GameObjects()
 
 void PlayField::Update()
 {
-	// Update list of active objects in the world
 	for (auto it : m_gameObjects)
-	{
 		it->Update(*this);
-	}
 
 	for (auto it : m_gameObjectToAdd)
-	{
 		m_gameObjects.push_back(it);		
-	}
 
 	for (auto it : m_gameObjectToRemove)
 	{
@@ -40,7 +35,7 @@ void PlayField::Update()
 	m_gameObjectToAdd.clear();
 	m_gameObjectToRemove.clear();	  
 
-	if (m_alienCount == 3)
+	if (m_alienCount == m_numberOfAliensBeforeBetterAlien)
 		UpgradeAliens();
 }
 
@@ -111,6 +106,7 @@ void PlayField::RemoveObject(GameObject* newObj)
 */
 void PlayField::UpgradeAliens()
 {
+	// TODO : OPTI
 	for (auto it : m_gameObjects)
 	{
 		if (strcmp(it->m_objType, "Alien") == 0)
