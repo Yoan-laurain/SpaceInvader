@@ -1,12 +1,13 @@
 #pragma once
 #include <vector>
 #include "GameObject.h"
-#include "Input.h"
+#include "PlayerShip.h"
+#include <InputMgr.h>
 
 class PlayField
 {
 	public:
-		Input* m_controllerInput;
+		InputMgr* _InputMgr;
 		sf::Vector2f m_bounds;
 
 		// Number of available active laser slots for aliens and player
@@ -19,9 +20,17 @@ class PlayField
 		int m_numberOfAliensBeforeBetterAlien = 3;
 
 		PlayField(sf::Vector2f iBounds);
+		~PlayField();
+
+		void Start();
+		
 		const std::vector<GameObject*>& GameObjects();
 
 		void Update();
+		void AddNewPlayer(PlayerShip* player);
+
+		bool BindAction(PlayerShip* player, InputAction inputAction, std::function<void(float)> func);
+		InputMgr* GetInputMgr() const;
 
 		GameObject* GetPlayerObject();
 
@@ -47,4 +56,10 @@ class PlayField
 		std::vector<GameObject*> m_gameObjects;
 		std::vector<GameObject*> m_gameObjectToAdd;
 		std::vector<GameObject*> m_gameObjectToRemove;
+
+	protected :
+		std::vector<PlayerShip*> Players;
+	
 };
+
+PlayField* GetGame();

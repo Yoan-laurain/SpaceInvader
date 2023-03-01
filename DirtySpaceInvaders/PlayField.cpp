@@ -1,16 +1,39 @@
 #include "PlayField.h"
-#include "PlayerInput.h"
 #include "BetterAlien.h"
 #include "Alien.h"
 #include <GameRand.h>
 #include <Rock.h>
-#include <PlayerShip.h>
-#include "PlayField.h"
+#include <cassert>
 
-PlayField::PlayField(sf::Vector2f iBounds) : m_bounds(iBounds)
+PlayField::PlayField(sf::Vector2f iBounds) : Players(), m_bounds(iBounds), _InputMgr(nullptr)
 {
-	m_controllerInput = new PlayerInput;
+	_InputMgr = new InputMgr();
+	_InputMgr->Init();
+	
 	PopulateField();
+}
+
+PlayField::~PlayField()
+{
+	for (PlayerShip* p : Players)
+	{
+		delete p;
+	}
+	Players.clear();
+	
+	if (_InputMgr)
+	{
+		delete _InputMgr;
+		_InputMgr = nullptr;
+	}
+}
+
+void PlayField::Start()
+{
+	for (auto it : Players) 
+	{
+		it->Start(); 
+	}
 }
 
 const std::vector<GameObject*>& PlayField::GameObjects()
@@ -20,16 +43,23 @@ const std::vector<GameObject*>& PlayField::GameObjects()
 
 void PlayField::Update()
 {
+	_InputMgr->Update();
+	
 	for (auto it : m_gameObjects)
-		it->Update(*this);
+	{
+		if ( nullptr != it)
+		{
+			it->Update(*this);
+		}
+	}
 
 	for (auto it : m_gameObjectToAdd)
 		m_gameObjects.push_back(it);		
 
 	for (auto it : m_gameObjectToRemove)
 	{
+		m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), it), m_gameObjects.end());
 		delete it;
-		m_gameObjects.erase(std::find(m_gameObjects.begin(), m_gameObjects.end(), it));
 	}
 
 	m_gameObjectToAdd.clear();
@@ -37,6 +67,42 @@ void PlayField::Update()
 
 	if (m_alienCount == m_numberOfAliensBeforeBetterAlien)
 		UpgradeAliens();
+}
+
+void PlayField::AddNewPlayer(PlayerShip* player)
+{
+	Players.push_back(player);
+
+	_InputMgr->AddNewPlayer();
+}
+
+bool PlayField::BindAction(PlayerShip* player, InputAction inputAction, std::function<void(float)> func)
+{
+	int index = -1;
+	for (int i = 0; i < Players.size(); ++i)
+	{
+		if (Players[i] == player)
+		{
+			index = i;
+		}
+	}
+
+#if _DEBUG
+	assert(index != -1);
+#else
+	if (index == -1)
+	{
+		return false;
+	}
+#endif
+
+	_InputMgr->BindAction(index, inputAction, func);
+	return true;
+}
+
+InputMgr* PlayField::GetInputMgr() const
+{
+	return _InputMgr;
 }
 
 GameObject* PlayField::GetPlayerObject()
@@ -185,4 +251,5 @@ void PlayField::PopulatePlayer()
 	PlayerShip* p = new PlayerShip;
 	p->m_pos = sf::Vector2f(40, 27);
 	AddObject(p);
+	AddNewPlayer(p);
 }

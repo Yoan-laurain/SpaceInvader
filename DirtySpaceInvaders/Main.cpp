@@ -3,18 +3,28 @@
 #include <memory>
 #include "PlayField.h"
 
+PlayField* g_playField = nullptr;
+
+PlayField* GetGame()
+{
+	return g_playField;
+}
+
 int main()
 {
 	sf::Vector2f size(80, 28);
 	Renderer consoleRenderer(size);
-	PlayField world(size);
+	
+	g_playField = new PlayField(size);
+
+	g_playField->Start();
 
 	while(true)    
 	{
-		world.Update();
+		g_playField->Update(); 
 		 
 		RenderItemList rl;
-		for (auto it : world.GameObjects())
+		for (auto it : g_playField->GameObjects()) 
 		{
 			RenderItem a = RenderItem(sf::Vector2f(it->m_pos), it->m_sprite);
 			rl.push_back(a);

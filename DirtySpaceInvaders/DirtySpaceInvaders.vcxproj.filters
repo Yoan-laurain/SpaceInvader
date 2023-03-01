@@ -61,6 +61,12 @@
     <Filter Include="Source Files\Renderer">
       <UniqueIdentifier>{0d33eb4f-37c1-401f-80e6-271dd7e075c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SFMLInputs">
+      <UniqueIdentifier>{f2494894-50a9-486b-9a53-b28ffca91945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SFMLInputs">
+      <UniqueIdentifier>{ddb9b77d-cef9-4cf7-8e44-f9654d5d5824}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PlayField.h">
@@ -73,9 +79,6 @@
       <Filter>Header Files\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="Input.h">
-      <Filter>Header Files\Inputs</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerInput.h">
       <Filter>Header Files\Inputs</Filter>
     </ClInclude>
     <ClInclude Include="RndInput.h">
@@ -102,6 +105,18 @@
     <ClInclude Include="AlienLaser.h">
       <Filter>Header Files\GameObjects\Aliens</Filter>
     </ClInclude>
+    <ClInclude Include="InputMgr.h">
+      <Filter>Header Files\SFMLInputs</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultKeyBind.h">
+      <Filter>Header Files\SFMLInputs</Filter>
+    </ClInclude>
+    <ClInclude Include="InputAction.h">
+      <Filter>Header Files\SFMLInputs</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerInputAction.h">
+      <Filter>Header Files\SFMLInputs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -115,9 +130,6 @@
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerInput.cpp">
-      <Filter>Source Files\Inputs</Filter>
     </ClCompile>
     <ClCompile Include="RndInput.cpp">
       <Filter>Source Files\Inputs</Filter>
@@ -142,6 +154,12 @@
     </ClCompile>
     <ClCompile Include="AlienLaser.cpp">
       <Filter>Source Files\GameObjects\Alien</Filter>
+    </ClCompile>
+    <ClCompile Include="InputMgr.cpp">
+      <Filter>Source Files\SFMLInputs</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerInputAction.cpp">
+      <Filter>Source Files\SFMLInputs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
