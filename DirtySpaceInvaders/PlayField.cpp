@@ -76,7 +76,6 @@ void PlayField::Update()
 		if (nullptr != it)
 			m_gameObjects.push_back(it);	
 
-
 	m_gameObjectToAdd.clear();
 	m_gameObjectToRemove.clear();	 
 

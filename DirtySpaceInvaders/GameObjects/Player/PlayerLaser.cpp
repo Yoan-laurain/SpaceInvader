@@ -33,7 +33,8 @@ void PlayerLaser::Update(PlayField& world)
 		
 		if (deleted)
 			break;
-		else if ( !strcmp(it->m_objType, "Alien") )
+		
+		if ( !strcmp(it->m_objType, "Alien") )
 		{
 			if ( it->IntCmp(m_pos) )
 			{				
@@ -42,14 +43,20 @@ void PlayerLaser::Update(PlayField& world)
 			}
 		}
 		else if (!strcmp(it->m_objType, "AlienLaser"))
-			if ( it->IntCmp(m_pos) )
+		{
+			if (it->IntCmp(m_pos))
 			{
 				world.DespawnLaser(it);
 				deleted = true;
 			}
+		}
 		else if (!strcmp(it->m_objType, "Rock"))
-			if ( it->IntCmp(m_pos) )
+		{
+			if (it->IntCmp(m_pos))
+			{
 				deleted = true;
+			}
+		}	
 	}
 
 	if (deleted)
