@@ -54,10 +54,10 @@ void Alien::CheckBorderHorizontal(PlayField& world)
 
 void Alien::Update(PlayField& world)
 {
-	m_pos.x += m_direction * m_velocity;
-	
 	CheckBorderHorizontal(world);
 	CheckBorderVertical(world);
+
+	m_pos.x += m_direction * m_velocity;
 
 	GameRand::floatRand fireRate(0, 1);
 	if (fireRate(GameRand::GetInstance()->rGen) < 0.5 && world.m_AlienLasers > 0)

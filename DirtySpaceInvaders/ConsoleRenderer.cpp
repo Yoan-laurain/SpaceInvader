@@ -2,6 +2,7 @@
 #include <iostream>
 #include "ConsoleRenderer.h"
 #include <Windows.h>
+#include <PlayField.h>
 
 void setCursorPosition(int x, int y)
 {
@@ -32,18 +33,18 @@ Renderer::~Renderer()
 	delete[] disp[1].canvas;
 }
 
-void Renderer::Update(const RenderItemList& RenderList)
+void Renderer::Update()
 {
 	FillCanvas(RS_BackgroundTile);
 
-	for (auto ri : RenderList)
+	for (auto it : GetGame()->GameObjects())
 	{
-		int x = int(ri.pos.x);
-		int y = int(ri.pos.y);
+		int x = int(it->m_pos.x);
+		int y = int(it->m_pos.y);
 
 		if (x >= 0 && x < renderBounds.x && y >= 0 && y < renderBounds.y)
 		{
-			*CurCanvas((int)ri.pos.x, +(int)ri.pos.y) = ri.sprite;
+			*CurCanvas((int)it->m_pos.x, +(int)it->m_pos.y) = it->m_sprite;
 		}
 	}
 

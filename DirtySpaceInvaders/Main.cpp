@@ -23,14 +23,7 @@ int main()
 	{
 		g_playField->Update(); 
 		 
-		RenderItemList rl;
-		for (auto it : g_playField->GameObjects()) 
-		{
-			RenderItem a = RenderItem(sf::Vector2f(it->m_pos), it->m_sprite);
-			rl.push_back(a);
-		}
-
-		consoleRenderer.Update(rl);
+		consoleRenderer.Update();
 
 		// Sleep a bit so updates don't run too fast
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));

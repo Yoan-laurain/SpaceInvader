@@ -40,6 +40,7 @@ bool AlienLaser::CheckCollisionWithRock(PlayField& world)
 		if (!strcmp(it->m_objType, "Rock"))
 			if (it->IntCmp(m_pos))
 				return true;
+	return false;
 }
 
 bool AlienLaser::CheckCollisionWithPlayer(PlayField& world)

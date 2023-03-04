@@ -30,7 +30,7 @@ public:
 	~Renderer();
 
 	// Draws all game objects after clearing filling the Canvas with _ symbol
-	void Update(const RenderItemList& renderList);
+	void Update();
 
 private:
 	sf::Vector2f renderBounds;

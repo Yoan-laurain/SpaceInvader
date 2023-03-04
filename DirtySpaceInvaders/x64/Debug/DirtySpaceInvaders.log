@@ -4,7 +4,8 @@ D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\AlienLaser.h(2
   AlienLaser.cpp
 D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\AlienLaser.h(19,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
 D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\AlienLaser.h(20,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\AlienLaser.cpp(53,35): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\AlienLaser.cpp(54,35): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  ConsoleRenderer.cpp
   Main.cpp
   PlayField.cpp
   PlayerLaser.cpp
@@ -16,8 +17,7 @@ D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\PlayerLaser.h(
 D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
 D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\PlayerShip.cpp(31,14): warning C4244: '-=' : conversion de 'float' en 'int', perte possible de données
   Génération de code en cours...
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\AlienLaser.cpp(63): warning C4715: 'AlienLaser::CheckCollisionWithPlayer' : les chemins de contrôle ne retournent pas tous une valeur
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\AlienLaser.cpp(43): warning C4715: 'AlienLaser::CheckCollisionWithRock' : les chemins de contrôle ne retournent pas tous une valeur
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\AlienLaser.cpp(64): warning C4715: 'AlienLaser::CheckCollisionWithPlayer' : les chemins de contrôle ne retournent pas tous une valeur
 sfml-window-s-d.lib(Keyboard.cpp.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'sfml-window-s-d.lib(Keyboard.cpp.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
 sfml-window-s-d.lib(InputImpl.cpp.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'sfml-window-s-d.lib(InputImpl.cpp.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
 sfml-window-s-d.lib(Window.cpp.obj) : warning LNK4099: PDB '' n'a pu être trouvé avec 'sfml-window-s-d.lib(Window.cpp.obj)' ou sur '' ; l'objet sera lié sans informations de débogage
