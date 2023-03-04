@@ -1,8 +1,8 @@
 #include "PlayField.h"
-#include "BetterAlien.h"
-#include "Alien.h"
+#include "../DirtySpaceInvaders/GameObjects/Aliens/BetterAlien/BetterAlien.h"
+#include "../DirtySpaceInvaders/GameObjects/Aliens/SimpleAlien/Alien.h"
 #include <GameRand.h>
-#include <Rock.h>
+#include <../DirtySpaceInvaders/GameObjects/Props/Rock.h>
 #include <cassert>
 
 PlayField::PlayField(sf::Vector2f iBounds) : Players(), m_bounds(iBounds), _InputMgr(nullptr)
@@ -98,7 +98,7 @@ void PlayField::AddNewPlayer(PlayerShip* player)
 
 bool PlayField::BindAction(PlayerShip* player, InputAction inputAction, std::function<void(float)> func)
 {
-	if (nullptr == player) return;
+	if (nullptr == player) return false;
 
 	int index = -1;
 	for (int i = 0; i < Players.size(); ++i)

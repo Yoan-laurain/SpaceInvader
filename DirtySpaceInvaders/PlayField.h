@@ -1,8 +1,9 @@
 #pragma once
 #include <vector>
-#include "GameObject.h"
-#include "PlayerShip.h"
-#include <InputMgr.h>
+#include "../DirtySpaceInvaders/GameObjects/GameObject.h"
+#include "../DirtySpaceInvaders/GameObjects/Player/PlayerLaser.h"
+#include "../DirtySpaceInvaders/SFMLInputs/InputMgr.h"
+#include "GameObjects/Player/PlayerShip.h"
 
 class PlayField
 {

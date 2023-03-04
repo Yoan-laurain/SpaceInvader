@@ -1,4 +1,4 @@
-#include "ConsoleRenderer.h"
+#include "../DirtySpaceInvaders/Renderer/ConsoleRenderer.h"
 #include <thread>
 #include "PlayField.h"
 
