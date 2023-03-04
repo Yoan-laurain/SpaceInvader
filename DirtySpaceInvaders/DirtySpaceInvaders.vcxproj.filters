@@ -75,46 +75,46 @@
     <ClInclude Include="GameRand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Header Files\GameObjects</Filter>
-    </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Header Files\Inputs</Filter>
-    </ClInclude>
-    <ClInclude Include="RndInput.h">
-      <Filter>Header Files\Inputs</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerLaser.h">
-      <Filter>Header Files\GameObjects\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerShip.h">
-      <Filter>Header Files\GameObjects\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Alien.h">
-      <Filter>Header Files\GameObjects\Aliens\SimpleAlien</Filter>
-    </ClInclude>
-    <ClInclude Include="BetterAlien.h">
-      <Filter>Header Files\GameObjects\Aliens\BetterAlien</Filter>
-    </ClInclude>
-    <ClInclude Include="Rock.h">
-      <Filter>Header Files\GameObjects\Props</Filter>
-    </ClInclude>
-    <ClInclude Include="ConsoleRenderer.h">
-      <Filter>Header Files\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="AlienLaser.h">
-      <Filter>Header Files\GameObjects\Aliens</Filter>
-    </ClInclude>
-    <ClInclude Include="InputMgr.h">
-      <Filter>Header Files\SFMLInputs</Filter>
     </ClInclude>
     <ClInclude Include="DefaultKeyBind.h">
       <Filter>Header Files\SFMLInputs</Filter>
     </ClInclude>
-    <ClInclude Include="InputAction.h">
+    <ClInclude Include="../DirtySpaceInvaders/GameObjects/Aliens/BetterAlien/BetterAlien.h">
+      <Filter>Header Files\GameObjects\Aliens\BetterAlien</Filter>
+    </ClInclude>
+    <ClInclude Include="../DirtySpaceInvaders/GameObjects/Aliens/SimpleAlien/Alien.h">
+      <Filter>Header Files\GameObjects\Aliens\SimpleAlien</Filter>
+    </ClInclude>
+    <ClInclude Include="../DirtySpaceInvaders/GameObjects/Aliens/SimpleAlien/AlienLaser.h">
+      <Filter>Header Files\GameObjects\Aliens\SimpleAlien</Filter>
+    </ClInclude>
+    <ClInclude Include="../DirtySpaceInvaders/Renderer/ConsoleRenderer.h">
+      <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="../DirtySpaceInvaders/GameObjects/GameObject.h">
+      <Filter>Header Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="../DirtySpaceInvaders/SFMLInputs/InputAction.h">
       <Filter>Header Files\SFMLInputs</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerInputAction.h">
+    <ClInclude Include="../DirtySpaceInvaders/SFMLInputs/InputMgr.h">
+      <Filter>Header Files\SFMLInputs</Filter>
+    </ClInclude>
+    <ClInclude Include="../DirtySpaceInvaders/GameObjects/Props/Rock.h">
+      <Filter>Header Files\GameObjects\Props</Filter>
+    </ClInclude>
+    <ClInclude Include="../DirtySpaceInvaders/Inputs/RndInput.h">
+      <Filter>Header Files\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="../DirtySpaceInvaders/GameObjects/Player/PlayerShip.h">
+      <Filter>Header Files\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="../DirtySpaceInvaders/GameObjects/Player/PlayerLaser.h">
+      <Filter>Header Files\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="../DirtySpaceInvaders/SFMLInputs/PlayerInputAction.h">
       <Filter>Header Files\SFMLInputs</Filter>
     </ClInclude>
   </ItemGroup>
@@ -122,44 +122,44 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlayField.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GameRand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="RndInput.cpp">
-      <Filter>Source Files\Inputs</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerLaser.cpp">
-      <Filter>Source Files\GameObjects\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerShip.cpp">
-      <Filter>Source Files\GameObjects\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Rock.cpp">
-      <Filter>Source Files\GameObjects\Props</Filter>
-    </ClCompile>
-    <ClCompile Include="BetterAlien.cpp">
-      <Filter>Source Files\GameObjects\Alien\BetterAlien</Filter>
-    </ClCompile>
-    <ClCompile Include="Alien.cpp">
+    <ClCompile Include="../DirtySpaceInvaders/GameObjects/Aliens/SimpleAlien/Alien.cpp">
       <Filter>Source Files\GameObjects\Alien\SimpleAlien</Filter>
     </ClCompile>
-    <ClCompile Include="ConsoleRenderer.cpp">
+    <ClCompile Include="../DirtySpaceInvaders/GameObjects/Aliens/SimpleAlien/AlienLaser.cpp">
+      <Filter>Source Files\GameObjects\Alien\SimpleAlien</Filter>
+    </ClCompile>
+    <ClCompile Include="../DirtySpaceInvaders/GameObjects/Aliens/BetterAlien/BetterAlien.cpp">
+      <Filter>Source Files\GameObjects\Alien\BetterAlien</Filter>
+    </ClCompile>
+    <ClCompile Include="../DirtySpaceInvaders/Renderer/ConsoleRenderer.cpp">
       <Filter>Source Files\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="AlienLaser.cpp">
-      <Filter>Source Files\GameObjects\Alien</Filter>
+    <ClCompile Include="../DirtySpaceInvaders/GameObjects/GameObject.cpp">
+      <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="InputMgr.cpp">
+    <ClCompile Include="../DirtySpaceInvaders/SFMLInputs/InputMgr.cpp">
       <Filter>Source Files\SFMLInputs</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerInputAction.cpp">
+    <ClCompile Include="../DirtySpaceInvaders/SFMLInputs/PlayerInputAction.cpp">
       <Filter>Source Files\SFMLInputs</Filter>
+    </ClCompile>
+    <ClCompile Include="../DirtySpaceInvaders/GameObjects/Player/PlayerLaser.cpp">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="../DirtySpaceInvaders/GameObjects/Player/PlayerShip.cpp">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayField.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="../DirtySpaceInvaders/Inputs/RndInput.cpp">
+      <Filter>Source Files\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="../DirtySpaceInvaders/GameObjects/Props/Rock.cpp">
+      <Filter>Source Files\GameObjects\Props</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
