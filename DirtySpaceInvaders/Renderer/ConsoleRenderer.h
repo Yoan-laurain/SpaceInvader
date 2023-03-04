@@ -3,14 +3,6 @@
 #include <vector>
 #include <SFML/System/Vector2.hpp>
 
-struct RenderItem
-{
-	RenderItem(const sf::Vector2f& iPos, char iSprite) : pos(iPos), sprite(iSprite) {};
-	sf::Vector2f pos;
-	char sprite;
-};
-typedef std::vector<RenderItem> RenderItemList;
-
 enum RaiderSprites
 {
 	RS_BackgroundTile = ' ',

@@ -1,4 +1,30 @@
-﻿  Main.cpp
+﻿  BetterAlien.cpp
+  Alien.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.h(19,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.h(20,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
 D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
 D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+  AlienLaser.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.h(19,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.h(20,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.cpp(62,35): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  PlayerLaser.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.cpp(74,41): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  PlayerShip.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerShip.cpp(31,14): warning C4244: '-=' : conversion de 'float' en 'int', perte possible de données
+  Rock.cpp
+  ConsoleRenderer.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+  Main.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+  Génération de code en cours...
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.cpp(72): warning C4715: 'AlienLaser::CheckCollisionWithPlayer' : les chemins de contrôle ne retournent pas tous une valeur
   DirtySpaceInvaders.vcxproj -> D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\x64\Debug\DirtySpaceInvaders.exe
