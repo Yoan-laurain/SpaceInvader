@@ -26,14 +26,27 @@ PlayField::~PlayField()
 		delete _InputMgr;
 		_InputMgr = nullptr;
 	}
+
+	for (auto it : m_gameObjects)
+		delete it;
+	
+	m_gameObjects.clear();
+
+	for (auto it : m_gameObjectToAdd)
+		delete it;
+	
+	m_gameObjectToAdd.clear();
+	
+	for (auto it : m_gameObjectToRemove)
+		delete it;
+
+	m_gameObjectToRemove.clear();
 }
 
 void PlayField::Start()
 {
 	for (auto it : Players) 
-	{
 		it->Start(); 
-	}
 }
 
 const std::vector<GameObject*>& PlayField::GameObjects()
@@ -46,12 +59,8 @@ void PlayField::Update()
 	_InputMgr->Update();
 	
 	for (auto it : m_gameObjects)
-	{
 		if ( nullptr != it)
-		{
 			it->Update(*this);
-		}
-	}
 
 	for (auto it : m_gameObjectToAdd)
 		m_gameObjects.push_back(it);		
@@ -109,7 +118,6 @@ GameObject* PlayField::GetPlayerObject()
 {
 	auto it = std::find_if(m_gameObjects.begin(), m_gameObjects.end(), [](GameObject* in) 
 		{
-			// Maybe = 1 ?
 			return (strcmp(in->m_objType, "PlayerShip") == 0);
 		});
 
@@ -172,9 +180,7 @@ void PlayField::RemoveObject(GameObject* newObj)
 */
 void PlayField::UpgradeAliens()
 {
-	// TODO : OPTI
 	for (auto it : m_gameObjects)
-	{
 		if (strcmp(it->m_objType, "Alien") == 0)
 		{
 			Alien* alien = static_cast<Alien*>(it);
@@ -185,7 +191,6 @@ void PlayField::UpgradeAliens()
 			RemoveObject(it);
 			AddObject(newAlien);
 		}
-	}
 }
 
 /*

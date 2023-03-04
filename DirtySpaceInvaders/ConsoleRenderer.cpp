@@ -44,7 +44,7 @@ void Renderer::Update()
 
 		if (x >= 0 && x < renderBounds.x && y >= 0 && y < renderBounds.y)
 		{
-			*CurCanvas((int)it->m_pos.x, +(int)it->m_pos.y) = it->m_sprite;
+			*CurCanvas(x, y) = it->m_sprite;
 		}
 	}
 

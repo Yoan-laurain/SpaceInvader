@@ -84,6 +84,8 @@ Mise en place du clean code dans plusieurs fichiers ( 1 méthode 1 "action" )
 
 Check si nullptr des pointeurs aux destructeurs
 
+Amélioration de la détection de la fin de jeu ( collision player ou hors de map en y ) dans Alien::Update()
+
 Renommage des variables de classe avec m_
 
 

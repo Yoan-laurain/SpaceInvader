@@ -5,6 +5,6 @@ BetterAlien::BetterAlien() : Alien()
 {
 	m_health = 2.f;
 	m_energy = 1.f;
-	m_velocity = 1.5f;
-	m_sprite = RS_BetterAlien;
+	m_velocity = 1.7f;
+	m_sprite = RS_BetterAlien;	
 }

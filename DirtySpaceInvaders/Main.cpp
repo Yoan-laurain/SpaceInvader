@@ -1,6 +1,5 @@
 #include "ConsoleRenderer.h"
 #include <thread>
-#include <memory>
 #include "PlayField.h"
 
 PlayField* g_playField = nullptr;

@@ -14,7 +14,7 @@ class PlayField
 		int m_AlienLasers = 0;
 		int m_PlayerLasers = 40;
 
-		int m_alienCount = 100;
+		int m_alienCount = 3;
 		int m_rockCount = 5;
 
 		int m_numberOfAliensBeforeBetterAlien = 3;
