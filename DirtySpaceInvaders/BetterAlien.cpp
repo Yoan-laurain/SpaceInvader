@@ -8,3 +8,9 @@ BetterAlien::BetterAlien() : Alien()
 	m_velocity = 1.7f;
 	m_sprite = RS_BetterAlien;	
 }
+
+void BetterAlien::SetDirection(float iDirection)
+{
+	m_direction = iDirection; 
+}
+

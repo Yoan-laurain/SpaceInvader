@@ -11,13 +11,13 @@ class PlayField
 		sf::Vector2f m_bounds;
 
 		// Number of available active laser slots for aliens and player
-		int m_AlienLasers = 0;
+		int m_AlienLasers = 20;
 		int m_PlayerLasers = 40;
 
-		int m_alienCount = 3;
+		int m_alienCount = 30;
 		int m_rockCount = 5;
 
-		int m_numberOfAliensBeforeBetterAlien = 3;
+		int m_numberOfAliensBeforeBetterAlien = 5;
 
 		PlayField(sf::Vector2f iBounds);
 		~PlayField();

@@ -52,6 +52,11 @@ void Alien::CheckBorderHorizontal(PlayField& world)
 	}
 }
 
+float Alien::GetDirection()
+{
+	return m_direction;
+}
+
 void Alien::Update(PlayField& world)
 {
 	CheckBorderHorizontal(world);

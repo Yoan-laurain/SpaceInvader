@@ -13,6 +13,8 @@ class Alien : public GameObject
 		void CheckBorderVertical(PlayField& world);
 		void CheckBorderHorizontal(PlayField& world);
 
+		float GetDirection();
+
 	protected:
 		float m_health = 1.f;
 		float m_energy = 0.f;

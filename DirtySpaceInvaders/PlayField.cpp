@@ -58,24 +58,26 @@ void PlayField::Update()
 {
 	_InputMgr->Update();
 	
-	for (auto it : m_gameObjects)
-		if ( nullptr != it)
-			it->Update(*this);
-
-	for (auto it : m_gameObjectToAdd)
-		m_gameObjects.push_back(it);		
-
 	for (auto it : m_gameObjectToRemove)
 	{
 		m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), it), m_gameObjects.end());
 		delete it;
 	}
+	for (auto it : m_gameObjectToAdd)
+		m_gameObjects.push_back(it);	
+
 
 	m_gameObjectToAdd.clear();
-	m_gameObjectToRemove.clear();	  
+	m_gameObjectToRemove.clear();	 
+
+
 
 	if (m_alienCount == m_numberOfAliensBeforeBetterAlien)
 		UpgradeAliens();
+
+	for (auto it : m_gameObjects)
+		if (nullptr != it)
+			it->Update(*this);
 }
 
 void PlayField::AddNewPlayer(PlayerShip* player)
@@ -184,9 +186,10 @@ void PlayField::UpgradeAliens()
 		if (strcmp(it->m_objType, "Alien") == 0)
 		{
 			Alien* alien = static_cast<Alien*>(it);
-			
+					
 			BetterAlien* newAlien = new BetterAlien();
 			newAlien->m_pos = alien->m_pos;
+			newAlien->SetDirection(alien->GetDirection());
 			
 			RemoveObject(it);
 			AddObject(newAlien);

@@ -5,5 +5,7 @@
 class BetterAlien : public Alien
 {
 	public:
-		BetterAlien();
+		BetterAlien();	
+
+		void SetDirection(float iDirection);
 };
