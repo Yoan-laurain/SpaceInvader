@@ -5,7 +5,7 @@
 class RndInput : public Input
 {
 	public:
-		virtual bool Left() override;
-		virtual bool Right() override;
-		virtual bool Fire() override;
+		bool Left() override;
+		bool Right() override;
+		bool Fire() override;
 };

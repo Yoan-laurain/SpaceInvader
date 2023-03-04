@@ -29,6 +29,8 @@ void PlayerLaser::Update(PlayField& world)
 	// if hit alien
 	for (auto it : world.GameObjects())
 	{
+		if (nullptr == it) continue;
+		
 		if (deleted)
 			break;
 		else if ( !strcmp(it->m_objType, "Alien") )
@@ -56,7 +58,12 @@ void PlayerLaser::Update(PlayField& world)
 
 void PlayerLaser::CollisionWithAlien(PlayField& world, GameObject* alien)
 {
+	if (nullptr == alien) return;
+	
 	Alien* alienHit = (Alien*)alien;
+
+	if (nullptr == alienHit) return;
+
 	bool isDead = alienHit->DecreaseHealth(m_laserDamage);
 
 	if (isDead)

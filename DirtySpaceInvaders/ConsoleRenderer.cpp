@@ -39,6 +39,9 @@ void Renderer::Update()
 
 	for (auto it : GetGame()->GameObjects())
 	{
+		if (nullptr == it)
+			continue;
+		
 		int x = int(it->m_pos.x);
 		int y = int(it->m_pos.y);
 

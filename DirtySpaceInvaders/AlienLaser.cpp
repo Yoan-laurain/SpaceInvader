@@ -37,19 +37,27 @@ void AlienLaser::Update(PlayField& world)
 bool AlienLaser::CheckCollisionWithRock(PlayField& world)
 {
 	for (auto it : world.GameObjects())
-		if (!strcmp(it->m_objType, "Rock"))
-			if (it->IntCmp(m_pos))
-				return true;
+		if ( nullptr != it)
+			if (!strcmp(it->m_objType, "Rock"))
+				if (it->IntCmp(m_pos))
+					return true;
+				
 	return false;
 }
 
 bool AlienLaser::CheckCollisionWithPlayer(PlayField& world)
 {
 	GameObject* player = world.GetPlayerObject();
+
+	if (nullptr == player)
+		return false;
 	
 	if (IntCmp(player->m_pos))
 	{
 		PlayerShip* p = (PlayerShip*)player;
+
+		if (nullptr == p)
+			return false;
 		
 		bool isDead = p->DecreaseHealth(m_laserDamage);
 

@@ -17,7 +17,8 @@ PlayField::~PlayField()
 {
 	for (PlayerShip* p : Players)
 	{
-		delete p;
+		if (nullptr != p)
+			delete p;
 	}
 	Players.clear();
 	
@@ -28,17 +29,20 @@ PlayField::~PlayField()
 	}
 
 	for (auto it : m_gameObjects)
-		delete it;
+		if (nullptr != it)
+			delete it;
 	
 	m_gameObjects.clear();
 
 	for (auto it : m_gameObjectToAdd)
-		delete it;
+		if (nullptr != it)
+			delete it;
 	
 	m_gameObjectToAdd.clear();
 	
 	for (auto it : m_gameObjectToRemove)
-		delete it;
+		if (nullptr != it)
+			delete it;
 
 	m_gameObjectToRemove.clear();
 }
@@ -46,7 +50,8 @@ PlayField::~PlayField()
 void PlayField::Start()
 {
 	for (auto it : Players) 
-		it->Start(); 
+		if (nullptr != it)
+			it->Start(); 
 }
 
 const std::vector<GameObject*>& PlayField::GameObjects()
@@ -60,17 +65,20 @@ void PlayField::Update()
 	
 	for (auto it : m_gameObjectToRemove)
 	{
+		if (nullptr == it)
+			continue;
+		
 		m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), it), m_gameObjects.end());
 		delete it;
 	}
+	
 	for (auto it : m_gameObjectToAdd)
-		m_gameObjects.push_back(it);	
+		if (nullptr != it)
+			m_gameObjects.push_back(it);	
 
 
 	m_gameObjectToAdd.clear();
 	m_gameObjectToRemove.clear();	 
-
-
 
 	if (m_alienCount == m_numberOfAliensBeforeBetterAlien)
 		UpgradeAliens();
@@ -82,6 +90,7 @@ void PlayField::Update()
 
 void PlayField::AddNewPlayer(PlayerShip* player)
 {
+	if (nullptr == player) return;
 	Players.push_back(player);
 
 	_InputMgr->AddNewPlayer();
@@ -89,6 +98,8 @@ void PlayField::AddNewPlayer(PlayerShip* player)
 
 bool PlayField::BindAction(PlayerShip* player, InputAction inputAction, std::function<void(float)> func)
 {
+	if (nullptr == player) return;
+
 	int index = -1;
 	for (int i = 0; i < Players.size(); ++i)
 	{
@@ -131,6 +142,8 @@ GameObject* PlayField::GetPlayerObject()
 
 void PlayField::SpawnLaser(GameObject* newObj)
 {
+	if (nullptr == newObj) return;
+
 	if (strcmp(newObj->m_objType, "AlienLaser") == 0)
 		m_AlienLasers--;
 
@@ -142,6 +155,8 @@ void PlayField::SpawnLaser(GameObject* newObj)
 
 void PlayField::DespawnLaser(GameObject* newObj)
 {
+	if (nullptr == newObj) return;
+	
 	if (strcmp(newObj->m_objType, "AlienLaser") == 0)
 		m_AlienLasers++;
 
@@ -153,16 +168,20 @@ void PlayField::DespawnLaser(GameObject* newObj)
 
 void PlayField::AddObject(GameObject* newObj)
 {
+	if (nullptr == newObj) return;
+	
 	m_gameObjectToAdd.push_back(newObj);
 }
 
 void PlayField::RemoveObject(GameObject* newObj)
 {
+	if (nullptr == newObj) return;
+
 	auto it = std::find_if(m_gameObjects.begin(), m_gameObjects.end(), [&](GameObject* in) 
 		{
 			return (in == newObj);
 		});
-
+	
 	if (it != m_gameObjects.end())
 	{
 		if (strcmp(newObj->m_objType, "Alien") == 0)
@@ -183,17 +202,23 @@ void PlayField::RemoveObject(GameObject* newObj)
 void PlayField::UpgradeAliens()
 {
 	for (auto it : m_gameObjects)
-		if (strcmp(it->m_objType, "Alien") == 0)
-		{
-			Alien* alien = static_cast<Alien*>(it);
+		if (nullptr != it)
+			if (strcmp(it->m_objType, "Alien") == 0)
+			{
+				Alien* alien = static_cast<Alien*>(it);
+
+				if (nullptr == alien) continue;
 					
-			BetterAlien* newAlien = new BetterAlien();
-			newAlien->m_pos = alien->m_pos;
-			newAlien->SetDirection(alien->GetDirection());
+				BetterAlien* newAlien = new BetterAlien();
+
+				if (nullptr == newAlien) continue;
+				
+				newAlien->m_pos = alien->m_pos;
+				newAlien->SetDirection(alien->GetDirection());
 			
-			RemoveObject(it);
-			AddObject(newAlien);
-		}
+				RemoveObject(it);
+				AddObject(newAlien);
+			}
 }
 
 /*
@@ -202,6 +227,9 @@ void PlayField::UpgradeAliens()
 void PlayField::PopulateField()
 {
 	GameRand* gameRandInstance = GameRand::GetInstance();
+
+	if (nullptr == gameRandInstance) return;
+
 	gameRandInstance->rGen.seed(1);
 	
 	PopulateAliens();
@@ -257,6 +285,9 @@ void PlayField::PopulateRocks()
 void PlayField::PopulatePlayer()
 {
 	PlayerShip* p = new PlayerShip;
+
+	if (nullptr == p) return;
+	
 	p->m_pos = sf::Vector2f(40, 27);
 	AddObject(p);
 	AddNewPlayer(p);

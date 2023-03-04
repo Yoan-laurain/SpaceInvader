@@ -16,6 +16,9 @@ int main()
 	
 	g_playField = new PlayField(size);
 
+	if (nullptr == g_playField)
+		return -1;
+
 	g_playField->Start();
 
 	while(true)    
