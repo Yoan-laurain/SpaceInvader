@@ -1,14 +1,21 @@
 #include "Alien.h"
 #include "AlienLaser.h"
-#include "PlayField.h"
 #include "GameRand.h"
 #include "../DirtySpaceInvaders/Renderer/ConsoleRenderer.h"
+#include "PlayField.h"
 
 Alien::Alien()
 {
 	m_objType = new char[64];
 	strcpy(m_objType, "Alien");
 	m_sprite = RS_Alien;
+
+	if (!m_texture.loadFromFile("Ressources/Alien.png"))
+	{
+		throw std::invalid_argument("Could not load texture");
+	}
+
+	m_sfmlSprite.setTexture(m_texture);
 }
 
 Alien::~Alien()

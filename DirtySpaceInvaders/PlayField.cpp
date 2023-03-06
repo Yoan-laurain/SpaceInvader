@@ -1,11 +1,11 @@
 #include "PlayField.h"
+#include "GameRand.h"
 #include "../DirtySpaceInvaders/GameObjects/Aliens/BetterAlien/BetterAlien.h"
 #include "../DirtySpaceInvaders/GameObjects/Aliens/SimpleAlien/Alien.h"
-#include <GameRand.h>
-#include <../DirtySpaceInvaders/GameObjects/Props/Rock.h>
+#include "../DirtySpaceInvaders/GameObjects/Props/Rock.h"
 #include <cassert>
 
-PlayField::PlayField(sf::Vector2f iBounds) : Players(), m_bounds(iBounds), _InputMgr(nullptr)
+PlayField::PlayField(const Vector2D& vector ) : Players(), m_bounds(vector), _InputMgr(nullptr)
 {
 	_InputMgr = new InputMgr();
 	_InputMgr->Init();
@@ -287,7 +287,7 @@ void PlayField::PopulatePlayer()
 
 	if (nullptr == p) return;
 	
-	p->m_pos = sf::Vector2f(40, 27);
+	p->m_pos = Vector2D((m_bounds.x / 2), (m_bounds.y - 2)); 
 	AddObject(p);
 	AddNewPlayer(p);
 }

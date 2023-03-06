@@ -7,6 +7,14 @@ BetterAlien::BetterAlien() : Alien()
 	m_energy = 1.f;
 	m_velocity = 1.7f;
 	m_sprite = RS_BetterAlien;	
+
+	if (!m_texture.loadFromFile("Ressources/BetterAlien.png"))
+	{
+		throw std::invalid_argument("Could not load texture");
+	}
+
+	m_sfmlSprite.setTexture(m_texture);
+
 }
 
 void BetterAlien::SetDirection(float iDirection)

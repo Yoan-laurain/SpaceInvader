@@ -6,7 +6,7 @@ class AlienLaser : public GameObject
 {
 	public:
 		AlienLaser();
-		~AlienLaser();
+		~AlienLaser() override;
 
 		void Update(PlayField& world) override;
 		

@@ -6,5 +6,5 @@ class Rock : public GameObject
 {
 	public:
 		Rock();
-		~Rock();
+		~Rock() override;
 };

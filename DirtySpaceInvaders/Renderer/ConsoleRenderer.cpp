@@ -1,8 +1,10 @@
 #include <vector>
 #include <iostream>
-#include "ConsoleRenderer.h"
 #include <Windows.h>
-#include <PlayField.h>
+
+#include "ConsoleRenderer.h"
+#include "PlayField.h"
+
 
 void setCursorPosition(int x, int y)
 {
@@ -18,48 +20,45 @@ void setCursorPosition(int x, int y)
 	SetConsoleCursorPosition(hOut, coord);
 }
 
-Renderer::Renderer(const sf::Vector2f& bounds)
-	: renderBounds(bounds)
+ConsoleRenderer::ConsoleRenderer(const Vector2D& bounds)
+	: IRenderer(bounds)
 {
 	canvasSize = (int)(bounds.x * bounds.y);
 	disp[0].canvas = new unsigned char[canvasSize];
 	disp[1].canvas = new unsigned char[canvasSize];
 }
 
-
-Renderer::~Renderer()
+ConsoleRenderer::~ConsoleRenderer()
 {
 	delete[] disp[0].canvas;
 	delete[] disp[1].canvas;
 }
 
-void Renderer::Update()
+void ConsoleRenderer::Update(PlayField& world)
 {
-	FillCanvas(RS_BackgroundTile);
+	FillCanvas( GetSprite( RS_BackgroundTile ) );
 
 	for (auto it : GetGame()->GameObjects())
 	{
 		if (nullptr == it)
 			continue;
-		
+
 		int x = int(it->m_pos.x);
 		int y = int(it->m_pos.y);
 
-		if (x >= 0 && x < renderBounds.x && y >= 0 && y < renderBounds.y)
+		if (x >= 0 && x < m_bounds.x && y >= 0 && y < m_bounds.y)
 		{
-			*CurCanvas(x, y) = it->m_sprite;
+			*CurCanvas(x, y) = GetSprite(it->m_sprite);
 		}
 	}
-
-	DrawCanvas();
 }
 
-unsigned char* Renderer::CurCanvas(int x, int y)
+unsigned char* ConsoleRenderer::CurCanvas(int x, int y)
 {
-	return &disp[curIdx % 2].canvas[x + (int)renderBounds.x * y];
+	return &disp[curIdx % 2].canvas[x + (int)m_bounds.x * y];
 }
 
-void Renderer::FillCanvas(unsigned char sprite)
+void ConsoleRenderer::FillCanvas(unsigned char sprite)
 {
 	for (int i = 0; i < canvasSize; i++)
 	{
@@ -67,11 +66,11 @@ void Renderer::FillCanvas(unsigned char sprite)
 	}
 }
 
-void Renderer::DrawCanvas()
+void ConsoleRenderer::Draw()
 {
-	for (int y = 0; y < renderBounds.y; y++)
+	for (int y = 0; y < m_bounds.y; y++)
 	{
-		for (int x = 0; x < renderBounds.x; x++)
+		for (int x = 0; x < m_bounds.x; x++)
 		{
 			setCursorPosition(x, y);
 			std::cout << *CurCanvas(x, y);
@@ -80,4 +79,29 @@ void Renderer::DrawCanvas()
 	}
 
 	curIdx++;
+}
+
+const unsigned char ConsoleRenderer::GetSprite(const RaiderSprites& sprite) const
+{
+	switch (sprite)
+	{
+		case RS_BackgroundTile:
+			return ' ';
+		case RS_Player: 
+			return 'P';
+		case RS_Alien:
+			return 'A';
+		case RS_BetterAlien:
+			return 'B';
+		case RS_PlayerLaser:
+			return 0xBA;
+		case RS_AlienLaser:
+			return '|';
+		case RS_Explosion:
+			return '*';
+		case RS_Rock:
+			return '#';
+		default:
+			return ' ';	
+	}
 }

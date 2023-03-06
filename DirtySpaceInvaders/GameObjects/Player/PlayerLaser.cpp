@@ -8,6 +8,13 @@ PlayerLaser::PlayerLaser()
 	m_objType = new char[64]; 
 	strcpy(m_objType, "PlayerLaser"); 
 	m_sprite = RS_PlayerLaser;
+
+	if (!m_texture.loadFromFile("Ressources/LaserPlayer.png"))
+	{
+		throw std::invalid_argument("Could not load texture");
+	}
+
+	m_sfmlSprite.setTexture(m_texture);
 }
 
 PlayerLaser::~PlayerLaser()
@@ -36,7 +43,7 @@ void PlayerLaser::Update(PlayField& world)
 		
 		if ( !strcmp(it->m_objType, "Alien") )
 		{
-			if ( it->IntCmp(m_pos) )
+			if ( it->m_pos.IntCmp(m_pos) )
 			{				
 				CollisionWithAlien(world, it);			
 				deleted = true;
@@ -44,7 +51,7 @@ void PlayerLaser::Update(PlayField& world)
 		}
 		else if (!strcmp(it->m_objType, "AlienLaser"))
 		{
-			if (it->IntCmp(m_pos))
+			if (it->m_pos.IntCmp(m_pos))
 			{
 				world.DespawnLaser(it);
 				deleted = true;
@@ -52,7 +59,7 @@ void PlayerLaser::Update(PlayField& world)
 		}
 		else if (!strcmp(it->m_objType, "Rock"))
 		{
-			if (it->IntCmp(m_pos))
+			if (it->m_pos.IntCmp(m_pos))
 			{
 				deleted = true;
 			}

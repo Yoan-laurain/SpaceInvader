@@ -8,6 +8,13 @@ AlienLaser::AlienLaser()
 	m_objType = new char[64]; 
 	strcpy(m_objType, "AlienLaser");
 	m_sprite = RS_AlienLaser;
+
+	if (!m_texture.loadFromFile("Ressources/AlienLaser.png"))
+	{
+		throw std::invalid_argument("Could not load texture");
+	}
+
+	m_sfmlSprite.setTexture(m_texture);
 }
 
 AlienLaser::~AlienLaser()
@@ -39,7 +46,7 @@ bool AlienLaser::CheckCollisionWithRock(PlayField& world)
 	for (auto it : world.GameObjects())
 		if ( nullptr != it)
 			if (!strcmp(it->m_objType, "Rock"))
-				if (it->IntCmp(m_pos))
+				if (it->m_pos.IntCmp(m_pos))
 					return true;
 				
 	return false;
@@ -52,7 +59,7 @@ bool AlienLaser::CheckCollisionWithPlayer(PlayField& world)
 	if (nullptr == player)
 		return false;
 	
-	if (IntCmp(player->m_pos))
+	if (m_pos.IntCmp(player->m_pos))
 	{
 		PlayerShip* p = (PlayerShip*)player;
 
@@ -69,4 +76,6 @@ bool AlienLaser::CheckCollisionWithPlayer(PlayField& world)
 
 		return true;
 	}
+
+	return false;
 }

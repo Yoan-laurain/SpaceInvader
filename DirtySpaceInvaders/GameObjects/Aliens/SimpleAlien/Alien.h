@@ -6,7 +6,7 @@ class Alien : public GameObject
 {
 	public:
 		Alien();
-		~Alien();
+		~Alien() override;
 
 		virtual bool DecreaseHealth(float damage) override;
 

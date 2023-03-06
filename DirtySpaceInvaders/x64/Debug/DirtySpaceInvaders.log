@@ -1,30 +1,69 @@
-﻿  BetterAlien.cpp
-  Alien.cpp
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.h(19,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.h(20,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+﻿  ConsoleRenderer.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(81,19): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(81,19): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(81,19): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(81,19): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(82,19): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(82,19): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(82,19): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(82,19): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(83,19): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(83,19): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(83,19): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(83,19): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(84,19): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(84,19): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(84,19): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(84,19): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(114,21): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(114,21): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(114,21): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(114,21): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(115,21): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(115,21): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(115,21): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(115,21): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(116,21): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(116,21): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(116,21): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(116,21): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(117,21): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(117,21): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(117,21): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(117,21): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(120,21): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(120,21): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(120,21): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(120,21): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(121,21): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(121,21): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(121,21): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(121,21): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(122,21): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(122,21): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(122,21): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(122,21): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(123,21): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(123,21): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(123,21): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(123,21): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(126,26): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(126,26): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(126,26): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(126,26): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(127,26): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(127,26): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(127,26): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(127,26): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(128,26): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(128,26): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(128,26): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(128,26): message : erreur de récupération ignorée : « ) »
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(129,26): error C2589: '(' : jeton non conforme à droite de '::'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(129,26): error C2760: erreur de syntaxe : ')' était inattendu ici; ';' attendu
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(129,26): error C3878: erreur de syntaxe : jeton inattendu ')' après 'expression_statement'
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\Dependencies\include\SFML\Graphics\Rect.inl(129,26): message : erreur de récupération ignorée : « ) »
 D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
 D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-  AlienLaser.cpp
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.h(19,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.h(20,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.cpp(62,35): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  PlayerLaser.cpp
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.cpp(74,41): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  PlayerShip.cpp
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerShip.cpp(31,14): warning C4244: '-=' : conversion de 'float' en 'int', perte possible de données
-  Rock.cpp
-  ConsoleRenderer.cpp
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-  Main.cpp
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+  Vector2D.h
   Génération de code en cours...
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\DirtySpaceInvaders\GameObjects\Aliens\SimpleAlien\AlienLaser.cpp(72): warning C4715: 'AlienLaser::CheckCollisionWithPlayer' : les chemins de contrôle ne retournent pas tous une valeur
-  DirtySpaceInvaders.vcxproj -> D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\x64\Debug\DirtySpaceInvaders.exe

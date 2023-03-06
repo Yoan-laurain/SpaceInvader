@@ -1,15 +1,16 @@
 #pragma once
 #include <vector>
-#include "../DirtySpaceInvaders/GameObjects/GameObject.h"
-#include "../DirtySpaceInvaders/GameObjects/Player/PlayerLaser.h"
+
 #include "../DirtySpaceInvaders/SFMLInputs/InputMgr.h"
+#include "../DirtySpaceInvaders/GameObjects/Player/PlayerLaser.h"
+#include "GameObjects/GameObject.h"
 #include "GameObjects/Player/PlayerShip.h"
 
 class PlayField
 {
 	public:
 		InputMgr* _InputMgr;
-		sf::Vector2f m_bounds;
+		Vector2D m_bounds;
 
 		// Number of available active laser slots for aliens and player
 		int m_AlienLasers = 20;
@@ -20,7 +21,7 @@ class PlayField
 
 		int m_numberOfAliensBeforeBetterAlien = 5;
 
-		PlayField(sf::Vector2f iBounds);
+		PlayField(const Vector2D& iBounds);
 		~PlayField();
 
 		void Start();

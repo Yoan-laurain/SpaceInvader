@@ -9,6 +9,13 @@ PlayerShip::PlayerShip()
 	m_objType = new char[64];
 	strcpy(m_objType, "PlayerShip");
 	m_sprite = RS_Player;
+
+	if (!m_texture.loadFromFile("Ressources/PlayerShip.png"))
+	{
+		throw std::invalid_argument("Could not load texture");
+	}
+
+	m_sfmlSprite.setTexture(m_texture);
 }
 
 PlayerShip::~PlayerShip()

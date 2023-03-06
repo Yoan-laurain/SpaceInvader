@@ -90,6 +90,8 @@ Amélioration de la détection de la fin de jeu ( collision player ou hors de ma
 
 Renommage des variables de classe avec m_
 
+Retrait des renderlist item inutiles
+
 
 `- Partie configurable :` 
 

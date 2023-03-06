@@ -1,31 +1,20 @@
 #pragma once
 
-#include <vector>
-#include <SFML/System/Vector2.hpp>
+#include "IRenderer.h"
+#include "GameObjects/GameObject.h"
 
-enum RaiderSprites
-{
-	RS_BackgroundTile = ' ',
-	RS_Player = 'P',
-	RS_Alien = 'A',
-	RS_BetterAlien = 'B',
-	RS_PlayerLaser = 0xBA,
-	RS_AlienLaser = '|',
-	RS_Explosion = '*',
-	RS_Rock = '#'
-};
-
-class Renderer
+class ConsoleRenderer : public IRenderer
 {
 public:
-	Renderer(const sf::Vector2f& bounds);
-	~Renderer();
+	ConsoleRenderer(const Vector2D& bounds);
+	~ConsoleRenderer() override;
 
 	// Draws all game objects after clearing filling the Canvas with _ symbol
-	void Update();
+	void Update(PlayField& world) override;
+	
+	void Draw() override;
 
 private:
-	sf::Vector2f renderBounds;
 	int curIdx = 0;
 
 	struct
@@ -39,6 +28,5 @@ private:
 	// Fills whole canvas array with sprite
 	void FillCanvas(unsigned char sprite);
 
-	// Prints canvas char array on console
-	void DrawCanvas();
+	const unsigned char GetSprite(const RaiderSprites& sprite) const;
 };
