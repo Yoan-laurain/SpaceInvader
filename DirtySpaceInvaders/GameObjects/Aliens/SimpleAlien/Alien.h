@@ -19,7 +19,7 @@ class Alien : public GameObject
 		float m_health = 1.f;
 		float m_energy = 0.f;
 		float m_direction = 1.f;
-		float m_velocity = 0.5f;
+		float m_velocity = 0.3f;
 
 		void Update(PlayField& world) override;
 };

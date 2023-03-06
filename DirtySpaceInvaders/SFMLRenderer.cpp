@@ -26,6 +26,10 @@ void SFMLRenderer::Draw()
 	for (auto& obj : GetGame()->GameObjects())
 	{
 		obj->m_sfmlSprite.setPosition(obj->m_pos.x * m_scale, obj->m_pos.y * m_scale);
+
+		const sf::Vector2u& size = obj->m_sfmlSprite.getTexture()->getSize();
+		obj->m_sfmlSprite.setScale(m_scale / size.x, m_scale / size.y);
+
 		m_window->draw(obj->m_sfmlSprite); 
 	} 
 	
@@ -42,12 +46,4 @@ void SFMLRenderer::SetScale(float scale)
 	m_scale = scale;
 
 	m_window->setSize(sf::Vector2u(m_bounds.x * m_scale, m_bounds.y * m_scale));
-
-	for (auto& obj : GetGame()->GameObjects()) 
-	{
-		const sf::Vector2u& size = obj->m_sfmlSprite.getTexture()->getSize();
-		
-		obj->m_sfmlSprite.setScale(m_scale / size.x, m_scale / size.y);
-	}
-
 }

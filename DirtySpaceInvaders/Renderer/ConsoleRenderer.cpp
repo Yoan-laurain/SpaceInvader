@@ -1,9 +1,9 @@
+#include "ConsoleRenderer.h"
+#include "PlayField.h"
 #include <vector>
 #include <iostream>
 #include <Windows.h>
 
-#include "ConsoleRenderer.h"
-#include "PlayField.h"
 
 
 void setCursorPosition(int x, int y)

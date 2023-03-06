@@ -68,7 +68,7 @@ void PlayField::Update()
 		if (nullptr == it)
 			continue;
 		
-		m_gameObjects.erase(std::remove(m_gameObjects.begin(), m_gameObjects.end(), it), m_gameObjects.end());
+		m_gameObjects.erase(std::find(m_gameObjects.begin(), m_gameObjects.end(), it));
 		delete it;
 	}
 	

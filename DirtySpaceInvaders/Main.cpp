@@ -20,10 +20,10 @@ PlayField* GetGame()
 
 int main()
 {
-	Vector2D size(80,45);
+	Vector2D size(40,25);
 
 #if RenderMode == 0
-	IRenderer* consoleRenderer = new SFMLRenderer(size,16);
+	IRenderer* consoleRenderer = new SFMLRenderer(size,32);
 #elif RenderMode == 1
 	IRenderer* consoleRenderer = new ConsoleRenderer(size);
 #endif
@@ -43,7 +43,7 @@ int main()
 		consoleRenderer->Draw();
 
 		// Sleep a bit so updates don't run too fast
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
+		std::this_thread::sleep_for(std::chrono::milliseconds(30));
 	}
 
 	delete g_playField;

@@ -5,7 +5,7 @@ BetterAlien::BetterAlien() : Alien()
 {
 	m_health = 2.f;
 	m_energy = 1.f;
-	m_velocity = 1.7f;
+	m_velocity = 0.5f;
 	m_sprite = RS_BetterAlien;	
 
 	if (!m_texture.loadFromFile("Ressources/BetterAlien.png"))
