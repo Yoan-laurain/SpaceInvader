@@ -143,6 +143,9 @@ void PlayField::SpawnLaser(GameObject* newObj)
 {
 	if (nullptr == newObj) return;
 
+	if (std::find(m_gameObjectToAdd.begin(), m_gameObjectToAdd.end(), newObj) != m_gameObjectToAdd.end())
+		return;
+
 	if (strcmp(newObj->m_objType, "AlienLaser") == 0)
 		m_AlienLasers--;
 
@@ -155,6 +158,9 @@ void PlayField::SpawnLaser(GameObject* newObj)
 void PlayField::DespawnLaser(GameObject* newObj)
 {
 	if (nullptr == newObj) return;
+
+	if (std::find(m_gameObjectToRemove.begin(), m_gameObjectToRemove.end(), newObj) != m_gameObjectToRemove.end())
+		return;
 	
 	if (strcmp(newObj->m_objType, "AlienLaser") == 0)
 		m_AlienLasers++;

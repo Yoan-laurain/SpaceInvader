@@ -56,6 +56,13 @@ Si vous avez une question n'hésitez pas à me contacter. Bonne correction.
 	c'est inversé dans : Alien::Update
 	Il était toujours considérer comme out donc y++
 
+`Bug 9 : `
+
+	On check les spawn et despawn des lasers si ils sont pas déjà en ajout ou en delete
+	sinon ya des lasers "fantomes" on gagne des lasers ( les aliens aussi ) 
+	ça casse tout
+
+
 `Threshold 1 : Ajout, améliorations`
 
 Création d'une architecture de dossiers classes etc... 
