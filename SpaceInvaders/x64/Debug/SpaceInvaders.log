@@ -1,2 +1,2 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: Le répertoire intermédiaire (x64\Debug\) contient des fichiers partagés provenant d'un autre projet (DirtySpaceInvaders.vcxproj). Cela peut entraîner un comportement de nettoyage et de regénération incorrect.
-  SpaceInvaders.vcxproj -> C:\Users\ghost\Desktop\SpaceInvaders\x64\Debug\SpaceInvaders.exe
+﻿D:\Programmes (x86)\Visual Studio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: Le répertoire intermédiaire (x64\Debug\) contient des fichiers partagés provenant d'un autre projet (DirtySpaceInvaders.vcxproj). Cela peut entraîner un comportement de nettoyage et de regénération incorrect.
+  SpaceInvaders.vcxproj -> D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\x64\Debug\SpaceInvaders.exe

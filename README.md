@@ -51,9 +51,10 @@ Si vous avez une question n'hésitez pas à me contacter. Bonne correction.
 
 `Bug 8 : `
 
-	A partir de 41 aliens on avait un alien qui spawnait à droite de l'écran 
-	Puis tomber inexorablement car on le déplacer puis on checkait les border maintenant 
+	Quand un alien spwan près d'un bord il etéait bugged 
+	Il tomber inexorablement car on le déplacer puis on checkait les border maintenant 
 	c'est inversé dans : Alien::Update
+	Il était toujours considérer comme out donc y++
 
 `Threshold 1 : Ajout, améliorations`
 
@@ -66,7 +67,7 @@ Arret du jeu quand le joueur meurt -> Alien cpp -> Update et Alien Laser cpp ->U
 Mise en place de decreased health dans player ship et Alien hérité de GameObject
 	afin de pouvoir gérer la vie du joueur et des aliens
 
-Création classe better alien herite de alien
+Création classe better alien qui herite de alien
 
 Quand il y a x aliens restants ils sont remplacés par des better aliens.
 	PlayerField -> UpgradeAliens
@@ -91,6 +92,19 @@ Amélioration de la détection de la fin de jeu ( collision player ou hors de ma
 Renommage des variables de classe avec m_
 
 Retrait des renderlist item inutiles
+
+Mise en place du renderer SFML
+
+Mise ne place des inputs SFML
+
+Possibilité de switch de renderer dans le main avec un int
+
+Ajout d'images, adapatation des constructeurs pour SFML Renderer
+
+Dirty to not Dirty rename
+
+J'avais commencé à faire les collisions de manière moins bête mais j'ai pas eu le tems de finir ducoup 
+j'ai rien mis
 
 
 `- Partie configurable :` 
