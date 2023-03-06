@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\GameObjects">
+      <UniqueIdentifier>{60dc0a00-85c5-441e-bd60-f03a3725e742}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects">
+      <UniqueIdentifier>{dfe786c5-cfba-44fd-b18f-fca88f3bc266}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Inputs">
+      <UniqueIdentifier>{f88dba50-0038-4de6-9aa0-d185cee4b7da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Inputs">
+      <UniqueIdentifier>{f284a717-fb79-40b7-9d66-bd52006e7b2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Player">
+      <UniqueIdentifier>{5071b0bf-7e95-42dd-90a0-2c50b5899764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Alien">
+      <UniqueIdentifier>{93d01b03-06fa-4260-bf0d-c2e0552031c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Player">
+      <UniqueIdentifier>{f7204619-fa53-4f2c-b4eb-b2d574648b4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Aliens">
+      <UniqueIdentifier>{94bbde5a-f4b6-472e-ba09-b1e48692a7ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Aliens\BetterAlien">
+      <UniqueIdentifier>{a559f85f-cee3-44f8-9e95-096d8c354b16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Aliens\SimpleAlien">
+      <UniqueIdentifier>{0a6ab31c-5f6c-4f7e-9e15-06c8864a956e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameObjects\Props">
+      <UniqueIdentifier>{7f0a4bce-5d2e-45e6-a9c0-74924638194c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Props">
+      <UniqueIdentifier>{b32b01f7-89f2-4670-ab60-07f3bf193ae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Alien\BetterAlien">
+      <UniqueIdentifier>{61423700-e75e-4d8b-b482-5277698b6eff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Alien\SimpleAlien">
+      <UniqueIdentifier>{7d3c7d85-a1ae-4949-b8e0-afe77cce7ef6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderer">
+      <UniqueIdentifier>{80f0375b-334e-4082-bf26-71090889d722}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer">
+      <UniqueIdentifier>{0d33eb4f-37c1-401f-80e6-271dd7e075c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SFMLInputs">
+      <UniqueIdentifier>{f2494894-50a9-486b-9a53-b28ffca91945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SFMLInputs">
+      <UniqueIdentifier>{ddb9b77d-cef9-4cf7-8e44-f9654d5d5824}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PlayField.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/Inputs/Input.h">
+      <Filter>Header Files\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/SFMLInputs/DefaultKeyBind.h">
+      <Filter>Header Files\SFMLInputs</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/GameObjects/Aliens/BetterAlien/BetterAlien.h">
+      <Filter>Header Files\GameObjects\Aliens\BetterAlien</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/GameObjects/Aliens/SimpleAlien/Alien.h">
+      <Filter>Header Files\GameObjects\Aliens\SimpleAlien</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/GameObjects/Aliens/SimpleAlien/AlienLaser.h">
+      <Filter>Header Files\GameObjects\Aliens\SimpleAlien</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/Renderer/ConsoleRenderer.h">
+      <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/GameObjects/GameObject.h">
+      <Filter>Header Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/SFMLInputs/InputAction.h">
+      <Filter>Header Files\SFMLInputs</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/SFMLInputs/InputMgr.h">
+      <Filter>Header Files\SFMLInputs</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/GameObjects/Props/Rock.h">
+      <Filter>Header Files\GameObjects\Props</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/Inputs/RndInput.h">
+      <Filter>Header Files\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/GameObjects/Player/PlayerShip.h">
+      <Filter>Header Files\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/GameObjects/Player/PlayerLaser.h">
+      <Filter>Header Files\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="../SpaceInvaders/SFMLInputs/PlayerInputAction.h">
+      <Filter>Header Files\SFMLInputs</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMLRenderer.h">
+      <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderer.h">
+      <Filter>Header Files\Renderer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/GameObjects/Aliens/SimpleAlien/Alien.cpp">
+      <Filter>Source Files\GameObjects\Alien\SimpleAlien</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/GameObjects/Aliens/SimpleAlien/AlienLaser.cpp">
+      <Filter>Source Files\GameObjects\Alien\SimpleAlien</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/GameObjects/Aliens/BetterAlien/BetterAlien.cpp">
+      <Filter>Source Files\GameObjects\Alien\BetterAlien</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/Renderer/ConsoleRenderer.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/GameObjects/GameObject.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/SFMLInputs/InputMgr.cpp">
+      <Filter>Source Files\SFMLInputs</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/SFMLInputs/PlayerInputAction.cpp">
+      <Filter>Source Files\SFMLInputs</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/GameObjects/Player/PlayerLaser.cpp">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/GameObjects/Player/PlayerShip.cpp">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayField.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/Inputs/RndInput.cpp">
+      <Filter>Source Files\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/GameObjects/Props/Rock.cpp">
+      <Filter>Source Files\GameObjects\Props</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMLRenderer.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2D.h">
+      <Filter>Header Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="IRenderer.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,4 +1,0 @@
-﻿  PlayField.cpp
-C:\Users\ghost\Desktop\SpaceInvaders\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\ghost\Desktop\SpaceInvaders\DirtySpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-  DirtySpaceInvaders.vcxproj -> C:\Users\ghost\Desktop\SpaceInvaders\x64\Debug\DirtySpaceInvaders.exe
