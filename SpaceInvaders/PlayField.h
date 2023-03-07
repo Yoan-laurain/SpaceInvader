@@ -1,10 +1,11 @@
 #pragma once
-#include <vector>
 
-#include "../SpaceInvaders/SFMLInputs/InputMgr.h"
+#include "../SpaceInvaders/Inputs/SFMLInputs/InputMgr.h"
 #include "../SpaceInvaders/GameObjects/Player/PlayerLaser.h"
 #include "GameObjects/GameObject.h"
 #include "GameObjects/Player/PlayerShip.h"
+
+#include <vector>
 
 class PlayField
 {
@@ -13,10 +14,10 @@ class PlayField
 		Vector2D m_bounds;
 
 		// Number of available active laser slots for aliens and player
-		int m_AlienLasers = 1;
-		int m_PlayerLasers = 40;
+		int m_AlienLasers = 5;
+		int m_PlayerLasers = 10;
 
-		int m_alienCount = 30;
+		int m_alienCount = 20;
 		int m_rockCount = 5;
 
 		int m_numberOfAliensBeforeBetterAlien = 5;

@@ -1,5 +1,5 @@
 #include "RndInput.h"
-#include "GameRand.h"
+#include "../Utils/GameRand.h"
 
 bool RndInput::Left()
 {

@@ -1,5 +1,5 @@
 #include "BetterAlien.h"
-#include "../SpaceInvaders/Renderer/ConsoleRenderer.h"
+#include "Renderer/ConsoleRenderer/ConsoleRenderer.h"
 
 BetterAlien::BetterAlien() : Alien()
 {

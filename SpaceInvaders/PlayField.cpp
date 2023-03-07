@@ -1,5 +1,5 @@
 #include "PlayField.h"
-#include "GameRand.h"
+#include "../SpaceInvaders/Utils/GameRand.h"
 #include "../SpaceInvaders/GameObjects/Aliens/BetterAlien/BetterAlien.h"
 #include "../SpaceInvaders/GameObjects/Aliens/SimpleAlien/Alien.h"
 #include "../SpaceInvaders/GameObjects/Props/Rock.h"

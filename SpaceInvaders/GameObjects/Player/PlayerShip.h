@@ -1,19 +1,20 @@
 #pragma once
 
-#include "../SpaceInvaders/GameObjects/GameObject.h"
-#include "../SpaceInvaders/SFMLInputs/InputAction.h"
+#include "GameObjects/GameObject.h"
+#include "Inputs/SFMLInputs/InputAction.h"
+
 #include <functional>
 
 class PlayerShip : public GameObject
 {
 	public:
 		PlayerShip();
-		~PlayerShip();
+		~PlayerShip() override;
 
 		void Start();
 
 		void Update(PlayField& world) override;
-		virtual bool DecreaseHealth(float damage) override;
+		bool DecreaseHealth(float damage) override;
 
 		void Left(float value, float sign);
 		void Right(float value, float sign);

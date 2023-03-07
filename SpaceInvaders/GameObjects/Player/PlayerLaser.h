@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../SpaceInvaders/GameObjects/GameObject.h"
+#include "GameObjects/GameObject.h"
 
 class PlayerLaser : public GameObject
 {
 	public:
 		PlayerLaser();
-		~PlayerLaser();
+		~PlayerLaser() override;
 
 		void Update(PlayField& world) override;
 

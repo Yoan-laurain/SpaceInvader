@@ -1,5 +1,5 @@
 #include "Rock.h"
-#include "../SpaceInvaders/Renderer/ConsoleRenderer.h"
+#include "Renderer/ConsoleRenderer/ConsoleRenderer.h"
 #include <string>
 
 Rock::Rock()

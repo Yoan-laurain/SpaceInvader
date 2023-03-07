@@ -1,12 +1,10 @@
 #include <thread>
-
-#include "../SpaceInvaders/Renderer/ConsoleRenderer.h"
 #include "PlayField.h"
 
 #define RenderMode 0
 
 #if RenderMode == 0
-#include "SFMLRenderer.h"
+#include "Renderer/SFMLRenderer/SFMLRenderer.h"
 #elif RenderMode == 1
 #include "Renderer/ConsoleRenderer.h"
 #endif

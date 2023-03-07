@@ -1,5 +1,5 @@
 #include "PlayerLaser.h"
-#include  "../SpaceInvaders/Renderer/ConsoleRenderer.h"
+#include  "Renderer/ConsoleRenderer/ConsoleRenderer.h"
 #include "PlayField.h"
 #include "../SpaceInvaders/GameObjects/Aliens/SimpleAlien/Alien.h"
 

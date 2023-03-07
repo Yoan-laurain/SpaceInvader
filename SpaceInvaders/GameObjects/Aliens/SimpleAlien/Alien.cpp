@@ -1,7 +1,7 @@
 #include "Alien.h"
 #include "AlienLaser.h"
-#include "GameRand.h"
-#include "../SpaceInvaders/Renderer/ConsoleRenderer.h"
+#include "Utils/GameRand.h"
+#include "Renderer/ConsoleRenderer/ConsoleRenderer.h"
 #include "PlayField.h"
 
 Alien::Alien()

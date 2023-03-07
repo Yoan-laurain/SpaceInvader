@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../SpaceInvaders/GameObjects/Aliens/SimpleAlien/Alien.h"
+#include "GameObjects/Aliens/SimpleAlien/Alien.h"
 
 class BetterAlien : public Alien
 {

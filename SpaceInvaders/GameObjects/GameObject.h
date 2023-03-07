@@ -1,6 +1,8 @@
 #pragma once
 
-#include "Vector2D.h"
+#include "../Utils/GameRand.h"
+#include "Utils/Vector2D.h"
+
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
 #include <stdexcept>

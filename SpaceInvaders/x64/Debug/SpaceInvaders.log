@@ -1,5 +1,0 @@
-﻿D:\Programmes (x86)\Visual Studio\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: Le répertoire intermédiaire (x64\Debug\) contient des fichiers partagés provenant d'un autre projet (DirtySpaceInvaders.vcxproj). Cela peut entraîner un comportement de nettoyage et de regénération incorrect.
-  PlayField.cpp
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-  SpaceInvaders.vcxproj -> D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\x64\Debug\SpaceInvaders.exe

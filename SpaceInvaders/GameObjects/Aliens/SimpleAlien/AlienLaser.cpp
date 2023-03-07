@@ -1,7 +1,7 @@
 #include "AlienLaser.h"
-#include "../SpaceInvaders/Renderer/ConsoleRenderer.h"
+#include "Renderer/ConsoleRenderer/ConsoleRenderer.h"
 #include "PlayField.h"
-#include "../SpaceInvaders/GameObjects/Player/PlayerShip.h"
+#include "GameObjects/Player/PlayerShip.h"
 
 AlienLaser::AlienLaser()
 {
