@@ -53,3 +53,8 @@ void SFMLRenderer::SetScale(const float scale)
 
 	m_window->setSize(sf::Vector2u(m_bounds.x * m_scale, m_bounds.y * m_scale));
 }
+
+sf::RenderWindow& SFMLRenderer::GetWindow() const
+{
+	return *m_window;
+}

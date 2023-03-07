@@ -18,6 +18,8 @@ class SFMLRenderer final : public IRenderer
 
 		float GetScale() const;
 		void SetScale(float scale);
+
+		sf::RenderWindow& GetWindow() const;
 		
 	private:
 		float m_scale;

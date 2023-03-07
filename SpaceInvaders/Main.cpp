@@ -5,6 +5,8 @@
 
 #if RenderMode == 0
 #include "Renderer/SFMLRenderer/SFMLRenderer.h"
+#include "SFML/Graphics/RenderWindow.hpp"
+#include "SFML/Window/Event.hpp"
 #elif RenderMode == 1
 #include "Renderer/ConsoleRenderer.h"
 #endif
@@ -18,10 +20,10 @@ PlayField* GetGame()
 
 int main()
 {
-	Vector2D size(40,25);
+	Vector2D size(40, 25);
 
 #if RenderMode == 0
-	IRenderer* consoleRenderer = new SFMLRenderer(size,32);
+	IRenderer* consoleRenderer = new SFMLRenderer(size, 32);
 #elif RenderMode == 1
 	IRenderer* consoleRenderer = new ConsoleRenderer(size);
 #endif
@@ -33,10 +35,23 @@ int main()
 
 	g_playField->Start();
 
-	while(true)
-	{		
-		g_playField->Update(); 
-		 
+#if RenderMode == 1	
+	while (true)
+	{ 
+#elif RenderMode == 0
+	sf::RenderWindow& window = static_cast<SFMLRenderer*>(consoleRenderer)->GetWindow();
+	while (window.isOpen())
+	{
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+		}
+#endif
+
+		g_playField->Update();
+
 		consoleRenderer->Update(*g_playField);
 		consoleRenderer->Draw();
 
