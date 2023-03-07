@@ -1,5 +1,6 @@
 #include <thread>
 #include "PlayField.h"
+#include <iostream>
 
 #define RenderMode 0
 
@@ -8,7 +9,7 @@
 #include "SFML/Graphics/RenderWindow.hpp"
 #include "SFML/Window/Event.hpp"
 #elif RenderMode == 1
-#include "Renderer/ConsoleRenderer.h"
+#include "Renderer/ConsoleRenderer/ConsoleRenderer.h"
 #endif
 
 PlayField* g_playField = nullptr;
@@ -59,7 +60,8 @@ int main()
 		std::this_thread::sleep_for(std::chrono::milliseconds(30));
 	}
 
-	delete g_playField;
+	delete consoleRenderer;
+	delete g_playField;  
 
 	return 0;
 }

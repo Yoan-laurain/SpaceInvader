@@ -13,7 +13,7 @@ class PlayField
 		Vector2D m_bounds;
 
 		// Number of available active laser slots for aliens and player
-		int m_AlienLasers = 5;
+		int m_AlienLasers = 0;
 		int m_PlayerLasers = 10;
 
 		int m_alienCount = 20;

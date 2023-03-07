@@ -18,6 +18,7 @@ PlayField::~PlayField()
 {
 	for (const PlayerShip* p : Players)
 	{
+		m_gameObjects.erase(std::find(m_gameObjects.begin(), m_gameObjects.end(), p));
 		delete p;
 	}
 	Players.clear();
@@ -28,18 +29,32 @@ PlayField::~PlayField()
 		_InputMgr = nullptr;
 	}
 
-	for (const auto it : m_gameObjects)
-		delete it;
-	
-	m_gameObjects.clear();
-
 	for (const auto it : m_gameObjectToAdd)
+	{
+		m_gameObjectToAdd.erase(std::find(m_gameObjectToAdd.begin(), m_gameObjectToAdd.end(), it));
 		delete it;
+	}
 	
 	m_gameObjectToAdd.clear();
 	
 	for (const auto it : m_gameObjectToRemove)
+	{
+		m_gameObjectToRemove.erase(std::find(m_gameObjectToRemove.begin(), m_gameObjectToRemove.end(), it));
 		delete it;
+	}
+
+	for (const auto it : m_gameObjects)
+	{
+		auto it2 = std::find(m_gameObjects.begin(), m_gameObjects.end(), it);
+		
+		if (it2 != m_gameObjects.end())
+		{
+			m_gameObjects.erase(it2);		
+			delete it;
+		}
+	}
+
+	m_gameObjects.clear();
 
 	m_gameObjectToRemove.clear();
 }
