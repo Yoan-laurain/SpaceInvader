@@ -3,10 +3,10 @@
 #include "Renderer/IRenderer.h"
 #include "GameObjects/GameObject.h"
 
-class ConsoleRenderer : public IRenderer
+class ConsoleRenderer final : public IRenderer
 {
 public:
-	ConsoleRenderer(const Vector2D& bounds);
+	explicit ConsoleRenderer(const Vector2D& bounds);
 	~ConsoleRenderer() override;
 
 	// Draws all game objects after clearing filling the Canvas with _ symbol

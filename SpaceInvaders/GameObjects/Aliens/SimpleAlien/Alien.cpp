@@ -23,59 +23,58 @@ Alien::~Alien()
 	delete[] m_objType;
 }
 
-bool Alien::DecreaseHealth(float damage)
+bool Alien::DecreaseHealth(const float damage)
 {
 	m_health -= damage; 
 	return m_health <= 0;
 }
 
-void Alien::CheckBorderVertical(PlayField& world)
+void Alien::CheckBorderVertical()
 {
-	if ( m_pos.y >= world.m_bounds.y - m_velocity)
+	if ( m_pos.y >= GetGame()->m_bounds.y - m_velocity)
 	{
 		// kill player 
-		GameObject* player = world.GetPlayerObject(); 
+		GameObject* player = GetGame()->GetPlayerObject(); 
 
 		if (player == nullptr)
 		{
 			throw std::invalid_argument("Player object is null");
-			return;
 		}
 
-		if ( m_pos.y >= player->m_pos.y && m_pos.x >= player->m_pos.x || m_pos.y >= world.m_bounds.y)
+		if ( m_pos.y >= player->m_pos.y && m_pos.x >= player->m_pos.x || m_pos.y >= GetGame()->m_bounds.y)
 		{
-			world.RemoveObject(player);
+			GetGame()->RemoveObject(player);
 			exit(0);
 		}
 	}
 }
 
-void Alien::CheckBorderHorizontal(PlayField& world)
+void Alien::CheckBorderHorizontal()
 {
-	if (m_pos.x < 0 || m_pos.x >= world.m_bounds.x - m_velocity)
+	if (m_pos.x < 0 || m_pos.x >= GetGame()->m_bounds.x - m_velocity)
 	{
 		m_direction = -m_direction;
 		m_pos.y += m_velocity;
 	}
 }
 
-float Alien::GetDirection()
+float Alien::GetDirection() const
 {
 	return m_direction;
 }
 
-void Alien::Update(PlayField& world)
+void Alien::Update()
 {
-	CheckBorderHorizontal(world);
-	CheckBorderVertical(world);
+	CheckBorderHorizontal();
+	CheckBorderVertical();
 	m_pos.x += m_direction * m_velocity;
 
 	GameRand::floatRand fireRate(0, 1);
-	if (fireRate(GameRand::GetInstance()->rGen) < 0.5 && world.m_AlienLasers > 0)
+	if (fireRate(GameRand::GetInstance()->rGen) < 0.5f && GetGame()->m_AlienLasers > 0)
 	{
 		//Spawn laser
-		GameObject& newLaser = *(new AlienLaser);
+		GameObject& newLaser = *new AlienLaser;
 		newLaser.m_pos = m_pos;
-		world.SpawnLaser(&newLaser);
+		GetGame()->SpawnLaser(&newLaser);
 	}
 }

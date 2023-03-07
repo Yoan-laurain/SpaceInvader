@@ -2,17 +2,17 @@
 
 #include "GameObjects/GameObject.h"
 
-class PlayerLaser : public GameObject
+class PlayerLaser final : public GameObject
 {
 	public:
 		PlayerLaser();
 		~PlayerLaser() override;
 
-		void Update(PlayField& world) override;
+		void Update() override;
 
-		void CollisionWithAlien(PlayField& world, GameObject* alien);
+		void CollisionWithAlien(GameObject* alien);
 
 	private:
-		int m_laserSpeed = 1.f;
-		int m_laserDamage = 1.f;
+		float m_laserSpeed = 1.f;
+		float m_laserDamage = 1.f;
 };

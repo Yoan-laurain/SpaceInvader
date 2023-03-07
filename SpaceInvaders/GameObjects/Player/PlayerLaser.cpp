@@ -1,7 +1,6 @@
 #include "PlayerLaser.h"
 #include  "Renderer/ConsoleRenderer/ConsoleRenderer.h"
 #include "PlayField.h"
-#include "../SpaceInvaders/GameObjects/Aliens/SimpleAlien/Alien.h"
 
 PlayerLaser::PlayerLaser()
 {
@@ -24,7 +23,7 @@ PlayerLaser::~PlayerLaser()
 }
 
 // TODO : OPTI
-void PlayerLaser::Update(PlayField& world)
+void PlayerLaser::Update()
 {
 	// if out of the map
 	bool deleted = false;
@@ -34,7 +33,7 @@ void PlayerLaser::Update(PlayField& world)
 		deleted = true;
 
 	// if hit alien
-	for (auto it : world.GameObjects())
+	for (const auto it : GetGame()->GameObjects())
 	{
 		if (nullptr == it) continue;
 		
@@ -45,7 +44,7 @@ void PlayerLaser::Update(PlayField& world)
 		{
 			if ( it->m_pos.IntCmp(m_pos) )
 			{				
-				CollisionWithAlien(world, it);			
+				CollisionWithAlien( it);			
 				deleted = true;
 			}
 		}
@@ -53,7 +52,7 @@ void PlayerLaser::Update(PlayField& world)
 		{
 			if (it->m_pos.IntCmp(m_pos))
 			{
-				world.DespawnLaser(it);
+				GetGame()->DespawnLaser(it);
 				deleted = true;
 			}
 		}
@@ -67,19 +66,13 @@ void PlayerLaser::Update(PlayField& world)
 	}
 
 	if (deleted)
-		world.DespawnLaser(this);
+		GetGame()->DespawnLaser(this);
 }
 
-void PlayerLaser::CollisionWithAlien(PlayField& world, GameObject* alien)
+void PlayerLaser::CollisionWithAlien(GameObject* alien)
 {
 	if (nullptr == alien) return;
 	
-	Alien* alienHit = (Alien*)alien;
-
-	if (nullptr == alienHit) return;
-
-	bool isDead = alienHit->DecreaseHealth(m_laserDamage);
-
-	if (isDead)
-		world.RemoveObject(alienHit);
+	if ( alien->DecreaseHealth(m_laserDamage) )
+		GetGame()->RemoveObject(alien);
 }

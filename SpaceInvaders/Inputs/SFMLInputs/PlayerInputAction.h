@@ -10,7 +10,7 @@ enum class InputAction;
 class PlayerInputAction final
 {
 public:
-	PlayerInputAction(unsigned playerIndex);
+	explicit PlayerInputAction(unsigned playerIndex);
 
 	void SetInputAction(InputAction action, float value);
 

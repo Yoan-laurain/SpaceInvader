@@ -188,11 +188,11 @@
     <ClCompile Include="../SpaceInvaders/Renderer/IRenderer.cpp">
       <Filter>Source Files\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="../SpaceInvaders/Utils/GameRand.cpp">
-      <Filter>Source Files\Inputs</Filter>
-    </ClCompile>
     <ClCompile Include="PlayField.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../SpaceInvaders/Utils/GameRand.cpp">
+      <Filter>Source Files\Utils</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

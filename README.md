@@ -162,5 +162,10 @@ Bonne correction.
 
 	- Amélioration de la détection de la fin de jeu ( collision player ou hors de map en y ) dans Alien::Update()
 
+	- Ajout de const
+
+	- Use static cast 
+
+	- Clean warnings
 J'avais commencé à faire les collisions de manière moins bête mais j'ai pas eu le temps de finir ducoup
 j'ai rien mis

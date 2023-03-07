@@ -6,10 +6,10 @@ namespace sf
 	class RenderWindow; 
  }
 
-class SFMLRenderer : public IRenderer
+class SFMLRenderer final : public IRenderer
 {
 	public:
-		SFMLRenderer(const Vector2D& bounds, float scale = 1 );
+		explicit SFMLRenderer(const Vector2D& bounds, float scale = 1 );
 		~SFMLRenderer() override;
 
 		void Update(PlayField& world) override;

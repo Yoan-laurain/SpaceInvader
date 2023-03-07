@@ -17,7 +17,7 @@ BetterAlien::BetterAlien() : Alien()
 
 }
 
-void BetterAlien::SetDirection(float iDirection)
+void BetterAlien::SetDirection(const float iDirection)
 {
 	m_direction = iDirection; 
 }

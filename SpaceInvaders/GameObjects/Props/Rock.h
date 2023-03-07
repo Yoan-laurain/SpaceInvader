@@ -2,7 +2,7 @@
 
 #include "GameObjects/GameObject.h"
 
-class Rock : public GameObject
+class Rock final : public GameObject
 {
 	public:
 		Rock();

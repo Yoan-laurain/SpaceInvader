@@ -1,24 +1,19 @@
 #include "PlayerInputAction.h"
 #include "InputAction.h"
-#include <iostream>
 
-PlayerInputAction::PlayerInputAction(unsigned playerIndex) : PlayerIndex(playerIndex)
+PlayerInputAction::PlayerInputAction(const unsigned playerIndex) : PlayerIndex(playerIndex)
 {
-	for (unsigned i = 0; i < (unsigned)InputAction::Num; ++i)
+	for (unsigned i = 0; i < static_cast<unsigned>(InputAction::Num); ++i)
 	{
-		InputAction action = static_cast<InputAction>(i);
+		auto action = static_cast<InputAction>(i);
 		InputActionsInfo.emplace(action, InputActionInfo());
 	}
 }
 
-void PlayerInputAction::SetInputAction(InputAction action, float value)
+void PlayerInputAction::SetInputAction(const InputAction action, const float value)
 {
 	InputActionInfo& info = InputActionsInfo.at(action);
-
-#if _DEBUG
-	//std::cout << "Player " << PlayerIndex << ", Action: " << (int) action << ", Update: " << value << std::endl;
-#endif
-
+	
 	info.Value = value;
 	for (auto callback : info.Callbacks)
 	{
@@ -26,25 +21,25 @@ void PlayerInputAction::SetInputAction(InputAction action, float value)
 	}
 }
 
-float PlayerInputAction::GetInputActionValue(InputAction action) const
+float PlayerInputAction::GetInputActionValue(const InputAction action) const
 {
 	return InputActionsInfo.at(action).Value;
 }
 
-bool PlayerInputAction::IsInputActionPressed(InputAction action) const
+bool PlayerInputAction::IsInputActionPressed(const InputAction action) const
 {
 	return InputActionsInfo.at(action).Value != 0.f;
 }
 
-bool PlayerInputAction::IsInputActionReleased(InputAction action) const
+bool PlayerInputAction::IsInputActionReleased(const InputAction action) const
 {
 	return InputActionsInfo.at(action).Value == 0.f;
 }
 
-void PlayerInputAction::BindAction(InputAction inputAction, std::function<void(float)> func)
+void PlayerInputAction::BindAction(const InputAction inputAction, const std::function<void(float)> func)
 {
 	InputActionsInfo.at(inputAction).Callbacks.push_back(func);
 }
 
-PlayerInputAction::InputActionInfo::InputActionInfo() : Value(0.f), Callbacks()
+PlayerInputAction::InputActionInfo::InputActionInfo() : Value(0.f)
 {}

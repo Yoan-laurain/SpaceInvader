@@ -2,7 +2,7 @@
 
 #include "GameObjects/Aliens/SimpleAlien/Alien.h"
 
-class BetterAlien : public Alien
+class BetterAlien final : public Alien
 {
 	public:
 		BetterAlien();

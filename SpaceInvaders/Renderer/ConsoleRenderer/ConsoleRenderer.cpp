@@ -4,15 +4,15 @@
 #include <iostream>
 #include <Windows.h>
 
-void setCursorPosition(int x, int y)
+void setCursorPosition(const int x, const int y)
 {
 	static const HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	std::cout.flush();
-	
-	COORD coord = 
+
+	const COORD coord = 
 		{
-			(SHORT)x,
-			(SHORT)y
+			static_cast<SHORT>(x),
+			static_cast<SHORT>(y)
 		};
 	
 	SetConsoleCursorPosition(hOut, coord);
@@ -21,7 +21,7 @@ void setCursorPosition(int x, int y)
 ConsoleRenderer::ConsoleRenderer(const Vector2D& bounds)
 	: IRenderer(bounds)
 {
-	canvasSize = (int)(bounds.x * bounds.y);
+	canvasSize = static_cast<int>(bounds.x * bounds.y);
 	disp[0].canvas = new unsigned char[canvasSize];
 	disp[1].canvas = new unsigned char[canvasSize];
 }
@@ -36,13 +36,13 @@ void ConsoleRenderer::Update(PlayField& world)
 {
 	FillCanvas( GetSprite( RS_BackgroundTile ) );
 
-	for (auto it : GetGame()->GameObjects())
+	for (const auto it : GetGame()->GameObjects())
 	{
 		if (nullptr == it)
 			continue;
 
-		int x = int(it->m_pos.x);
-		int y = int(it->m_pos.y);
+		const int x = static_cast<int>(it->m_pos.x);
+		const int y = static_cast<int>(it->m_pos.y);
 
 		if (x >= 0 && x < m_bounds.x && y >= 0 && y < m_bounds.y)
 		{
@@ -53,10 +53,10 @@ void ConsoleRenderer::Update(PlayField& world)
 
 unsigned char* ConsoleRenderer::CurCanvas(int x, int y)
 {
-	return &disp[curIdx % 2].canvas[x + (int)m_bounds.x * y];
+	return &disp[curIdx % 2].canvas[x + static_cast<int>(m_bounds.x) * y];
 }
 
-void ConsoleRenderer::FillCanvas(unsigned char sprite)
+void ConsoleRenderer::FillCanvas(const unsigned char sprite)
 {
 	for (int i = 0; i < canvasSize; i++)
 	{

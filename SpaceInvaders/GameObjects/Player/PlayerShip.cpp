@@ -3,7 +3,6 @@
 #include "Renderer/ConsoleRenderer/ConsoleRenderer.h"
 #include "PlayField.h"
 
-
 PlayerShip::PlayerShip()
 {
 	m_objType = new char[64];
@@ -20,10 +19,12 @@ PlayerShip::PlayerShip()
 
 PlayerShip::~PlayerShip()
 {
-	if (m_objType)
-		delete m_objType;
+	delete m_objType;
 }
 
+/*
+* Brief : Bind a function to the input action
+*/
 void PlayerShip::Start()
 {
 	BindFunctionToInputAction(InputAction::Left, std::bind(&PlayerShip::Left, this,std::placeholders::_1, -1.f));
@@ -31,35 +32,35 @@ void PlayerShip::Start()
 	BindFunctionToInputAction(InputAction::Fire, std::bind(&PlayerShip::Fire, this, std::placeholders::_1));
 }
 
-void PlayerShip::Update(PlayField& world) {}
+void PlayerShip::Update() {}
 
-bool PlayerShip::DecreaseHealth(float damage)
+bool PlayerShip::DecreaseHealth(const float damage)
 {
 	m_health -= damage;
 	return m_health <= 0;
 }
 
-void PlayerShip::Left(float value, float sign)
+void PlayerShip::Left(const float value, const float sign)
 {
-	if ( m_pos.x + (value * sign) * m_speed < 0 )
+	if ( m_pos.x + value * sign * m_speed < 0 )
 	{
 		return;
 	}
-	m_pos.x += (value * sign) * m_speed;
+	m_pos.x += value * sign * m_speed;
 }
 
-void PlayerShip::Right(float value, float sign)
+void PlayerShip::Right(const float value, const float sign)
 {
-	if (m_pos.x + (value * sign) * m_speed >= GetGame()->m_bounds.x)
+	if (m_pos.x + value * sign * m_speed >= GetGame()->m_bounds.x)
 	{
 		return;
 	}
-	m_pos.x += (value * sign) * m_speed;
+	m_pos.x += value * sign * m_speed;
 }
 
-void PlayerShip::Fire(float value)
+void PlayerShip::Fire(const float value)
 {
-	if (value == 0)
+	if (value == 0.f)
 	{
 		return;
 	}
@@ -67,13 +68,13 @@ void PlayerShip::Fire(float value)
 	if (GetGame()->m_PlayerLasers > 0)
 	{
 		//Spawn laser
-		GameObject& newLaser = *(new PlayerLaser);
+		GameObject& newLaser = *new PlayerLaser;
 		newLaser.m_pos = m_pos;
 		GetGame()->SpawnLaser(&newLaser);
 	}
 }
 
-void PlayerShip::BindFunctionToInputAction(InputAction inputAction, std::function<void(float)> func)
+void PlayerShip::BindFunctionToInputAction(const InputAction inputAction, const std::function<void(float)> func)
 {
 	GetGame()->BindAction(this, inputAction, func);
 }

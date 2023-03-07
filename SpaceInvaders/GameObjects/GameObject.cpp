@@ -4,7 +4,7 @@
 GameObject::GameObject() = default;
 GameObject::~GameObject() = default;
 
-void GameObject::Update(PlayField& world){}
+void GameObject::Update(){}
 
 bool GameObject::DecreaseHealth(float damage)
 {

@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../SpaceInvaders/Inputs/SFMLInputs/InputMgr.h"
-#include "../SpaceInvaders/GameObjects/Player/PlayerLaser.h"
 #include "GameObjects/GameObject.h"
 #include "GameObjects/Player/PlayerShip.h"
 
@@ -22,7 +21,7 @@ class PlayField
 
 		int m_numberOfAliensBeforeBetterAlien = 5;
 
-		PlayField(const Vector2D& iBounds);
+		explicit PlayField(const Vector2D& iBounds);
 		~PlayField();
 
 		void Start();
@@ -43,7 +42,7 @@ class PlayField
 
 		void AddObject(GameObject* newObj);
 
-		void RemoveObject(GameObject* newObj);
+		void RemoveObject(const GameObject* newObj);
 				
 		void UpgradeAliens();
 

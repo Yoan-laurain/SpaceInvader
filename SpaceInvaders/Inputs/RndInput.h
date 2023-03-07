@@ -2,7 +2,7 @@
 
 #include "Input.h"
 
-class RndInput : public Input
+class RndInput final : public Input
 {
 	public:
 		bool Left() override;

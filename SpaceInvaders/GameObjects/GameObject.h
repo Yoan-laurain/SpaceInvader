@@ -26,6 +26,9 @@ class GameObject
 {
 	public:
 		GameObject();
+		GameObject(const GameObject&) = delete;
+		GameObject& operator=(const GameObject&) = delete;
+	
 		virtual ~GameObject();
 
 		char* m_objType = nullptr;
@@ -35,7 +38,7 @@ class GameObject
 		sf::Sprite m_sfmlSprite;
 		sf::Texture m_texture;
 		
-		virtual void Update(PlayField& world);
+		virtual void Update();
 		
 		virtual bool DecreaseHealth(float damage);
 };

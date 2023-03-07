@@ -7,11 +7,11 @@ struct Vector2D
 		x = vector.x;
 		y = vector.y;
 	}
-	Vector2D(float x, float y) : x(x), y(y) {}
+	Vector2D(const float x, const float y) : x(x), y(y) {}
 
 	~Vector2D() = default;
 
-	bool IntCmp(const Vector2D& vec) const { return int(x) == int(vec.x) && int(y) == int(vec.y); }
+	bool IntCmp(const Vector2D& vec) const { return static_cast<int>(x) == static_cast<int>(vec.x) && static_cast<int>(y) == static_cast<int>(vec.y); }
 
 	float x;
 	float y;

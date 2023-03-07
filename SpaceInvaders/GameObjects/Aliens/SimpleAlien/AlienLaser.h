@@ -2,20 +2,20 @@
 
 #include "GameObjects/GameObject.h"
 
-class AlienLaser : public GameObject
+class AlienLaser final : public GameObject
 {
 	public:
 		AlienLaser();
 		~AlienLaser() override;
 
-		void Update(PlayField& world) override;
+		void Update() override;
 		
-		bool CheckCollisionWithRock(PlayField& world);
+		bool CheckCollisionWithRock();
 		
-		bool CheckCollisionWithPlayer(PlayField& world);
+		bool CheckCollisionWithPlayer();
 
 	private : 
 
-		int m_laserSpeed = 1.f;
-		int m_laserDamage = 1.f;
+		float m_laserSpeed = 1.f;
+		float m_laserDamage = 1.f;
 };

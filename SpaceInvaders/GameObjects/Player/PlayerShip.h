@@ -5,7 +5,7 @@
 
 #include <functional>
 
-class PlayerShip : public GameObject
+class PlayerShip final : public GameObject
 {
 	public:
 		PlayerShip();
@@ -13,7 +13,7 @@ class PlayerShip : public GameObject
 
 		void Start();
 
-		void Update(PlayField& world) override;
+		void Update() override;
 		bool DecreaseHealth(float damage) override;
 
 		void Left(float value, float sign);

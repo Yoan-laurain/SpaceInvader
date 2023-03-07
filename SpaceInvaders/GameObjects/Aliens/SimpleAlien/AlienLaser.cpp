@@ -22,28 +22,28 @@ AlienLaser::~AlienLaser()
 	delete[] m_objType;
 }
 
-void AlienLaser::Update(PlayField& world)
+void AlienLaser::Update()
 {
 	bool deleted = false;
 	m_pos.y += m_laserSpeed;
 
-	if (m_pos.y > world.m_bounds.y)
+	if (m_pos.y > GetGame()->m_bounds.y)
 		deleted = true;
 
-	if ( CheckCollisionWithRock(world) )
+	if ( CheckCollisionWithRock() )
 		deleted = true;
 
-	if ( CheckCollisionWithPlayer(world) ) 
+	if ( CheckCollisionWithPlayer() ) 
 		deleted = true;
 
 	if (deleted)
-		world.DespawnLaser((GameObject*)this);
+		GetGame()->DespawnLaser(this);
 }
 
 // TODO : OPTI
-bool AlienLaser::CheckCollisionWithRock(PlayField& world)
+bool AlienLaser::CheckCollisionWithRock()
 {
-	for (auto it : world.GameObjects())
+	for ( const auto it : GetGame()->GameObjects())
 		if ( nullptr != it)
 			if (!strcmp(it->m_objType, "Rock"))
 				if (it->m_pos.IntCmp(m_pos))
@@ -52,25 +52,23 @@ bool AlienLaser::CheckCollisionWithRock(PlayField& world)
 	return false;
 }
 
-bool AlienLaser::CheckCollisionWithPlayer(PlayField& world)
+bool AlienLaser::CheckCollisionWithPlayer()
 {
-	GameObject* player = world.GetPlayerObject();
+	GameObject* player = GetGame()->GetPlayerObject();
 
 	if (nullptr == player)
 		return false;
 	
 	if (m_pos.IntCmp(player->m_pos))
 	{
-		PlayerShip* p = (PlayerShip*)player;
+		const auto p = static_cast<PlayerShip*>(player);
 
 		if (nullptr == p)
 			return false;
-		
-		bool isDead = p->DecreaseHealth(m_laserDamage);
 
-		if (isDead)
+		if (p->DecreaseHealth(m_laserDamage))
 		{
-			world.RemoveObject(player);
+			GetGame()->RemoveObject(player);
 			exit(0);
 		}
 

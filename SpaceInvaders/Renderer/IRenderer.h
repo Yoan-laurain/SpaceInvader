@@ -7,7 +7,7 @@ class PlayField;
 class IRenderer
 {
 	public:
-		IRenderer(const Vector2D& m_bounds);
+		explicit IRenderer(const Vector2D& m_bounds);
 		virtual ~IRenderer();
 
 		virtual void Update(PlayField& world) = 0;

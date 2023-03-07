@@ -3,9 +3,10 @@
 #include "../SpaceInvaders/GameObjects/Aliens/BetterAlien/BetterAlien.h"
 #include "../SpaceInvaders/GameObjects/Aliens/SimpleAlien/Alien.h"
 #include "../SpaceInvaders/GameObjects/Props/Rock.h"
+
 #include <cassert>
 
-PlayField::PlayField(const Vector2D& vector ) : Players(), m_bounds(vector), _InputMgr(nullptr)
+PlayField::PlayField(const Vector2D& iBounds ) : _InputMgr(nullptr), m_bounds(iBounds), Players()
 {
 	_InputMgr = new InputMgr();
 	_InputMgr->Init();
@@ -15,10 +16,9 @@ PlayField::PlayField(const Vector2D& vector ) : Players(), m_bounds(vector), _In
 
 PlayField::~PlayField()
 {
-	for (PlayerShip* p : Players)
+	for (const PlayerShip* p : Players)
 	{
-		if (nullptr != p)
-			delete p;
+		delete p;
 	}
 	Players.clear();
 	
@@ -28,28 +28,25 @@ PlayField::~PlayField()
 		_InputMgr = nullptr;
 	}
 
-	for (auto it : m_gameObjects)
-		if (nullptr != it)
-			delete it;
+	for (const auto it : m_gameObjects)
+		delete it;
 	
 	m_gameObjects.clear();
 
-	for (auto it : m_gameObjectToAdd)
-		if (nullptr != it)
-			delete it;
+	for (const auto it : m_gameObjectToAdd)
+		delete it;
 	
 	m_gameObjectToAdd.clear();
 	
-	for (auto it : m_gameObjectToRemove)
-		if (nullptr != it)
-			delete it;
+	for (const auto it : m_gameObjectToRemove)
+		delete it;
 
 	m_gameObjectToRemove.clear();
 }
 
 void PlayField::Start()
 {
-	for (auto it : Players) 
+	for (const auto it : Players) 
 		if (nullptr != it)
 			it->Start(); 
 }
@@ -63,6 +60,7 @@ void PlayField::Update()
 {
 	_InputMgr->Update();
 	
+	// Remove objects
 	for (auto it : m_gameObjectToRemove)
 	{
 		if (nullptr == it)
@@ -72,19 +70,23 @@ void PlayField::Update()
 		delete it;
 	}
 	
+	// Add objects
 	for (auto it : m_gameObjectToAdd)
 		if (nullptr != it)
 			m_gameObjects.push_back(it);	
 
+	// Clear
 	m_gameObjectToAdd.clear();
 	m_gameObjectToRemove.clear();	 
 
+	// Upgrade aliens if needed
 	if (m_alienCount == m_numberOfAliensBeforeBetterAlien)
 		UpgradeAliens();
 
-	for (auto it : m_gameObjects)
+	// Update
+	for (const auto it : m_gameObjects)
 		if (nullptr != it)
-			it->Update(*this);
+			it->Update();
 }
 
 void PlayField::AddNewPlayer(PlayerShip* player)
@@ -128,18 +130,18 @@ InputMgr* PlayField::GetInputMgr() const
 
 GameObject* PlayField::GetPlayerObject()
 {
-	auto it = std::find_if(m_gameObjects.begin(), m_gameObjects.end(), [](GameObject* in) 
-		{
-			return (strcmp(in->m_objType, "PlayerShip") == 0);
-		});
+	const auto it = std::find_if(m_gameObjects.begin(), m_gameObjects.end(), [](const GameObject* in) 
+	{
+		return strcmp(in->m_objType, "PlayerShip") == 0;
+	});
 
 	if (it != m_gameObjects.end())
-		return (*it);
-	else
-		return nullptr;
+		return *it;
+	
+	return nullptr;
 }
 
-void PlayField::SpawnLaser(GameObject* newObj)
+void PlayField::SpawnLaser( GameObject* newObj)
 {
 	if (nullptr == newObj) return;
 
@@ -178,14 +180,14 @@ void PlayField::AddObject(GameObject* newObj)
 	m_gameObjectToAdd.push_back(newObj);
 }
 
-void PlayField::RemoveObject(GameObject* newObj)
+void PlayField::RemoveObject(const GameObject* newObj)
 {
 	if (nullptr == newObj) return;
 
-	auto it = std::find_if(m_gameObjects.begin(), m_gameObjects.end(), [&](GameObject* in) 
-		{
-			return (in == newObj);
-		});
+	const auto it = std::find_if(m_gameObjects.begin(), m_gameObjects.end(), [&](const GameObject* in) 
+	{
+		return in == newObj;
+	});
 	
 	if (it != m_gameObjects.end())
 	{
@@ -206,15 +208,15 @@ void PlayField::RemoveObject(GameObject* newObj)
 */
 void PlayField::UpgradeAliens()
 {
-	for (auto it : m_gameObjects)
+	for (const auto it : m_gameObjects)
 		if (nullptr != it)
 			if (strcmp(it->m_objType, "Alien") == 0)
 			{
-				Alien* alien = static_cast<Alien*>(it);
+				const auto alien = dynamic_cast<Alien*>(it);
 
 				if (nullptr == alien) continue;
-					
-				BetterAlien* newAlien = new BetterAlien();
+
+				auto* newAlien = new BetterAlien();
 
 				if (nullptr == newAlien) continue;
 				
@@ -250,14 +252,14 @@ void PlayField::PopulateField()
 
 void PlayField::PopulateAliens()
 {
-	GameRand::intRand xCoord(0, (int)m_bounds.x - 1); 
+	GameRand::intRand xCoord(0, static_cast<int>(m_bounds.x) - 1); 
 	GameRand::intRand yCoord(0, 10); 
 
 	for (int k = 0; k < m_alienCount; k++)
 	{
-		Alien& a = *(new Alien);
-		a.m_pos.x = (float)xCoord(GameRand::GetInstance()->rGen);
-		a.m_pos.y = (float)yCoord(GameRand::GetInstance()->rGen);
+		Alien& a = *new Alien;
+		a.m_pos.x = static_cast<float>(xCoord(GameRand::GetInstance()->rGen));
+		a.m_pos.y = static_cast<float>(yCoord(GameRand::GetInstance()->rGen));
 		AddObject(&a);
 	}
 }
@@ -270,14 +272,14 @@ void PlayField::PopulateAliens()
 
 void PlayField::PopulateRocks()
 {
-	GameRand::intRand xCoorRock(0, (int)m_bounds.x - 1);
+	GameRand::intRand xCoorRock(0, static_cast<int>(m_bounds.x) - 1);
 	GameRand::intRand yCoordRock(10, 15);
 
 	for (int k = 0; k < m_rockCount; k++)
 	{
-		Rock& a = *(new Rock);
-		a.m_pos.x = (float)xCoorRock(GameRand::GetInstance()->rGen);
-		a.m_pos.y = (float)yCoordRock(GameRand::GetInstance()->rGen);
+		Rock& a = *new Rock;
+		a.m_pos.x = static_cast<float>(xCoorRock(GameRand::GetInstance()->rGen));
+		a.m_pos.y = static_cast<float>(yCoordRock(GameRand::GetInstance()->rGen));
 		AddObject(&a);
 	}
 }
@@ -289,11 +291,11 @@ void PlayField::PopulateRocks()
 */
 void PlayField::PopulatePlayer()
 {
-	PlayerShip* p = new PlayerShip;
+	const auto p = new PlayerShip;
 
 	if (nullptr == p) return;
 	
-	p->m_pos = Vector2D((m_bounds.x / 2), (m_bounds.y - 2)); 
+	p->m_pos = Vector2D(m_bounds.x / 2, m_bounds.y - 2); 
 	AddObject(p);
 	AddNewPlayer(p);
 }

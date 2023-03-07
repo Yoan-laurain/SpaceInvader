@@ -2,7 +2,7 @@
 #include "PlayField.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 
-SFMLRenderer::SFMLRenderer(const Vector2D& bounds, float scale) :
+SFMLRenderer::SFMLRenderer(const Vector2D& bounds, const float scale) :
 	IRenderer(bounds),
 	m_scale(scale),
 	m_window(new sf::RenderWindow(sf::VideoMode(bounds.x * m_scale,bounds.y * m_scale),"Space Invaders"))
@@ -19,6 +19,12 @@ void SFMLRenderer::Update(PlayField& world)
 {
 }
 
+/*
+* Brief : Draw the game objects
+*		 - Set the position of the sprite
+*		 - Set the scale of the sprite
+*		 - Draw the sprite
+*/
 void SFMLRenderer::Draw()
 {
 	m_window->clear();
@@ -41,7 +47,7 @@ float SFMLRenderer::GetScale() const
 	return m_scale;
 }
 
-void SFMLRenderer::SetScale(float scale)
+void SFMLRenderer::SetScale(const float scale)
 {
 	m_scale = scale;
 

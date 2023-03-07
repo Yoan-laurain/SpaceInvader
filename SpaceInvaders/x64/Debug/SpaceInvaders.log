@@ -1,0 +1,28 @@
+﻿  PlayerLaser.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerLaser.cpp(77,29): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  PlayerShip.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerShip.cpp(40,14): warning C4244: '-=' : conversion de 'float' en 'int', perte possible de données
+  SFMLRenderer.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\Renderer\SFMLRenderer\SFMLRenderer.cpp(8,74): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\Renderer\SFMLRenderer\SFMLRenderer.cpp(8,55): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\Renderer\SFMLRenderer\SFMLRenderer.cpp(54,66): warning C4244: 'argument' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=unsigned int
+          ]
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\Renderer\SFMLRenderer\SFMLRenderer.cpp(54,44): warning C4244: 'argument' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=unsigned int
+          ]
+  PlayField.cpp
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerLaser.h(16,22): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\SpaceInvaders\GameObjects\Player\PlayerLaser.h(17,23): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+  Génération de code en cours...
+  SpaceInvaders.vcxproj -> D:\Users\ghost\Bureau\Projets-C++\SpaceInvader\x64\Debug\SpaceInvaders.exe

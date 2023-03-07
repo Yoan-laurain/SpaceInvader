@@ -10,10 +10,10 @@ bool InputMgr::Init()
 
 bool InputMgr::Update()
 {
-	for (const auto& p : InputBinds)
+	for (const auto& [fst, snd] : InputBinds)
 	{
-		const sf::Keyboard::Key& key = p.first;
-		const InputBindInfo& bindInfo = p.second;
+		const sf::Keyboard::Key& key = fst;
+		const InputBindInfo& bindInfo = snd;
 
 		if (sf::Keyboard::isKeyPressed(key))
 		{
@@ -35,7 +35,7 @@ bool InputMgr::Reset()
 
 void InputMgr::AddNewPlayer()
 {
-	unsigned index = PlayersInputAction.size();
+	const unsigned index = PlayersInputAction.size();
 	PlayersInputAction.push_back(PlayerInputAction(index));
 
 	if (index == 0)
@@ -46,12 +46,12 @@ void InputMgr::AddNewPlayer()
 	}
 }
 
-void InputMgr::BindAction(int playerIndex, InputAction inputAction, std::function<void(float)> func)
+void InputMgr::BindAction(const int playerIndex, const InputAction inputAction, const std::function<void(float)> func)
 {
 	PlayersInputAction[playerIndex].BindAction(inputAction, func);
 }
 
-void InputMgr::SetPlayerActionState(unsigned playerIndex, InputAction action, float value)
+void InputMgr::SetPlayerActionState(const unsigned playerIndex,const InputAction action, const float value)
 {
 #if _DEBUG
 	assert(playerIndex < PlayersInputAction.size());
@@ -60,5 +60,5 @@ void InputMgr::SetPlayerActionState(unsigned playerIndex, InputAction action, fl
 	PlayersInputAction[playerIndex].SetInputAction(action, value);
 }
 
-InputMgr::InputBindInfo::InputBindInfo(unsigned playerIndex, InputAction action) : PlayerIndex(playerIndex), Action(action)
+InputMgr::InputBindInfo::InputBindInfo(const unsigned playerIndex,const InputAction action) : PlayerIndex(playerIndex), Action(action)
 {}
